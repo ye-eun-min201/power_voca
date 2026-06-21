@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>파워토익 VOCA 퀴즈 · STEP 1–18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --paper:#EAEEF2; --paper-2:#E1E7ED; --card:#FFFFFF;
+    --ink:#15263E; --ink-soft:#5B6C84; --ink-faint:#9AA8BC;
+    --teal:#1C7A6B; --teal-deep:#14584D; --gold:#BE8419;
+    --coral:#C5584A; --coral-soft:#FBEDEB; --teal-soft:#E7F2F0; --gold-soft:#FBF4E5;
+    --line:rgba(21,38,62,.10); --line-2:rgba(21,38,62,.16);
+    --shadow:0 1px 2px rgba(21,38,62,.06),0 14px 34px -16px rgba(21,38,62,.28);
+    --ko:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --en:"Space Grotesk",ui-sans-serif,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:var(--ko);color:var(--ink);
+    background:radial-gradient(120% 80% at 50% -10%, #F1F4F7 0%, var(--paper) 46%, var(--paper-2) 100%) fixed;
+    -webkit-font-smoothing:antialiased;line-height:1.5;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);}
+  .wrap{max-width:560px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;padding:18px 16px 28px;}
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .brand .eyebrow{font-family:var(--en);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:var(--teal);margin-bottom:3px;}
+  .brand h1{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .brand .sub{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+  .day-chip{flex:none;font-family:var(--en);font-weight:700;font-size:12px;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:999px;padding:7px 12px;box-shadow:var(--shadow);white-space:nowrap;}
+  .day-chip b{color:var(--teal)}
+  .seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:4px;gap:4px;box-shadow:var(--shadow);margin-bottom:16px}
+  .seg button{flex:1;border:0;background:transparent;cursor:pointer;border-radius:9px;padding:10px 8px;font-family:var(--ko);font-size:14px;font-weight:700;color:var(--ink-soft);transition:.18s;}
+  .seg button .en{font-family:var(--en);font-size:11px;font-weight:600;display:block;letter-spacing:.04em;opacity:.7;margin-top:1px}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .seg button[aria-pressed="true"] .en{opacity:.85}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px;}
+  .panel + .panel{margin-top:14px}
+  .label{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--ink-soft);margin-bottom:11px;display:flex;align-items:center;gap:7px}
+  .label .ix{font-family:var(--en);font-weight:700;color:var(--teal);font-size:11px;border:1px solid var(--line-2);border-radius:6px;padding:1px 6px}
+  .chaps{display:grid;gap:9px}
+  .chap{display:flex;align-items:center;gap:12px;border:1px solid var(--line-2);background:#fff;border-radius:13px;cursor:pointer;padding:13px 14px;text-align:left;transition:.16s;color:var(--ink)}
+  .chap[aria-pressed="true"]{border-color:var(--teal);background:var(--teal-soft);box-shadow:inset 0 0 0 1px var(--teal)}
+  .chap:disabled{opacity:.5;cursor:not-allowed}
+  .chap .badge{font-family:var(--en);font-weight:700;font-size:11.5px;color:#fff;background:var(--ink);border-radius:8px;padding:5px 8px;flex:none;letter-spacing:.02em}
+  .chap[aria-pressed="true"] .badge{background:var(--teal)}
+  .chap .nm{font-weight:800;font-size:15px;display:block}
+  .chap .meta{font-size:11px;color:var(--ink-faint);margin-top:2px;font-family:var(--en);display:block;letter-spacing:.02em}
+  .chap .cnt{margin-left:auto;text-align:right;flex:none}
+  .chap .cnt b{font-family:var(--en);font-size:16px;font-weight:700;color:var(--ink)}
+  .chap[aria-pressed="true"] .cnt b{color:var(--teal-deep)}
+  .chap .cnt span{display:block;font-size:10px;color:var(--ink-faint)}
+  .chap.bm .badge{background:var(--gold)}
+  .chap.bm .meta{font-family:var(--ko)}
+  .chap.bm[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft);box-shadow:inset 0 0 0 1px var(--gold)}
+  .chap.bm[aria-pressed="true"] .cnt b{color:#8a6010}
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+  .toggle-row + .toggle-row{margin-top:13px;padding-top:13px;border-top:1px solid var(--line)}
+  .toggle-row .t-label b{font-size:14px;font-weight:700}
+  .toggle-row .t-label span{display:block;font-size:11.5px;color:var(--ink-faint);margin-top:1px}
+  .switch{position:relative;width:50px;height:30px;flex:none}
+  .switch input{opacity:0;width:0;height:0}
+  .slider{position:absolute;inset:0;background:var(--line-2);border-radius:999px;transition:.18s;cursor:pointer}
+  .slider::before{content:"";position:absolute;height:24px;width:24px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.18s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+  .switch input:checked + .slider{background:var(--teal)}
+  .switch input:checked + .slider::before{transform:translateX(20px)}
+  .switch input:focus-visible + .slider{outline:3px solid rgba(28,122,107,.4);outline-offset:2px}
+  .btn{width:100%;border:0;cursor:pointer;font-family:var(--ko);font-weight:800;font-size:15.5px;border-radius:14px;padding:15px;transition:.16s;letter-spacing:.01em;}
+  .btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 22px -12px rgba(21,38,62,.7)}
+  .btn-primary:hover{background:#0e1b2e}
+  .btn-primary:active{transform:translateY(1px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line-2)}
+  .btn-ghost:hover{background:#f6f8fa}
+  .start-bar{margin-top:18px}
+  .qtop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .counter{font-family:var(--en);font-weight:700;font-size:14px;color:var(--ink)}
+  .counter b{color:var(--teal)} .counter span{color:var(--ink-faint)}
+  .quit{background:none;border:0;color:var(--ink-soft);font-family:var(--ko);font-size:12.5px;font-weight:700;cursor:pointer;padding:6px;border-radius:8px}
+  .quit:hover{color:var(--coral)}
+  .scoreline{display:flex;gap:8px;align-items:center}
+  .pill{font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 9px;font-family:var(--en);letter-spacing:.02em}
+  .pill.know{background:var(--teal-soft);color:var(--teal-deep)}
+  .pill.again{background:var(--coral-soft);color:var(--coral)}
+  .bar{height:7px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:18px}
+  .bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),#2AA08C);border-radius:999px;transition:width .35s cubic-bezier(.4,0,.2,1)}
+
+  /* flashcard (toggle, no 3D flip) */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px;min-height:300px;display:flex;flex-direction:column;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .15s}
+  .card:active{border-color:var(--line-2)}
+  .card-top{display:flex;align-items:center;gap:8px}
+  .card .idx{font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--ink-faint)}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-family:var(--en);padding:3px 9px;border-radius:999px;background:#EEF1F4;color:var(--ink-soft)}
+  .tag.ko{background:var(--teal-soft);color:var(--teal-deep);font-family:var(--ko);letter-spacing:0;text-transform:none}
+  .tag.add{background:var(--gold);color:#fff;font-family:var(--ko);letter-spacing:0;text-transform:none}
+  .tools{margin-left:auto;display:flex;gap:8px}
+  .tool{width:40px;height:40px;border-radius:12px;border:1px solid var(--line-2);background:#fff;cursor:pointer;font-size:18px;display:grid;place-items:center;line-height:1;transition:.14s;color:var(--ink-soft)}
+  .tool:hover{background:#f6f8fa}
+  .tool:active{transform:scale(.93)}
+  .tool.bm[aria-pressed="true"]{color:var(--gold);border-color:var(--gold);background:var(--gold-soft)}
+  .tool.audio.speaking{color:var(--teal);border-color:var(--teal);background:var(--teal-soft)}
+  .card-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:6px 0}
+  .term{word-break:break-word}
+  .term.en-mode{font-family:var(--en);font-weight:700;font-size:30px;line-height:1.18;letter-spacing:-.01em;color:var(--ink)}
+  .term.ko-mode{font-size:26px;font-weight:800;line-height:1.34;color:var(--ink);word-break:keep-all}
+  .card .note{margin-top:14px;font-size:13.5px;color:var(--ink-soft);line-height:1.55;border-top:1px dashed var(--line-2);padding-top:12px}
+  .card .note:empty{display:none}
+  .card-hint{font-size:12.5px;color:var(--ink-faint);margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:7px}
+  .card-hint::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);display:inline-block;flex:none}
+  .grade{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px}
+  .grade button{border:0;cursor:pointer;font-family:var(--ko);font-weight:800;font-size:15px;border-radius:14px;padding:15px;transition:.16s}
+  .g-again{background:var(--coral-soft);color:var(--coral);border:1px solid rgba(197,88,74,.28)}
+  .g-again:hover{background:#f7e0dc}
+  .g-know{background:var(--teal);color:#fff;box-shadow:0 10px 20px -12px rgba(28,122,107,.8)}
+  .g-know:hover{background:var(--teal-deep)}
+  .g-again:active,.g-know:active{transform:translateY(1px)}
+
+  .mc-card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px 22px}
+  .mc-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .mc-card .idx{font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--ink-faint)}
+  .mc-card .q{font-family:var(--en);font-weight:700;font-size:27px;line-height:1.2;color:var(--ink);margin:12px 0 6px;word-break:break-word;text-align:center}
+  .mc-card .ask{font-size:12.5px;color:var(--ink-faint);text-align:center}
+  .choices{display:grid;gap:10px;margin-top:16px}
+  .choice{text-align:left;border:1px solid var(--line-2);background:#fff;border-radius:13px;cursor:pointer;padding:14px 15px;font-family:var(--ko);font-size:15px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:11px;transition:.14s;}
+  .choice .k{font-family:var(--en);font-weight:700;font-size:12px;color:var(--ink-faint);border:1px solid var(--line-2);border-radius:7px;width:24px;height:24px;display:grid;place-items:center;flex:none}
+  .choice:hover:not(:disabled){border-color:var(--ink-soft)}
+  .choice:disabled{cursor:default}
+  .choice.correct{border-color:var(--teal);background:var(--teal-soft)}
+  .choice.correct .k{border-color:var(--teal);background:var(--teal);color:#fff}
+  .choice.wrong{border-color:var(--coral);background:var(--coral-soft)}
+  .choice.wrong .k{border-color:var(--coral);background:var(--coral);color:#fff}
+  .mc-next{margin-top:14px}
+
+  .result{text-align:center;padding:26px 22px}
+  .result .big{font-family:var(--en);font-weight:700;font-size:54px;line-height:1;color:var(--ink)}
+  .result .big small{font-size:22px;color:var(--ink-faint);font-weight:600}
+  .result .headline{font-size:18px;font-weight:800;margin-top:12px}
+  .result .msg{font-size:13.5px;color:var(--ink-soft);margin-top:6px}
+  .res-stats{display:flex;gap:10px;justify-content:center;margin-top:18px}
+  .stat{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 8px}
+  .stat .v{font-family:var(--en);font-weight:700;font-size:22px}
+  .stat .l{font-size:11.5px;color:var(--ink-faint);margin-top:2px}
+  .stat.know .v{color:var(--teal)} .stat.again .v{color:var(--coral)}
+  .wrong-list{margin-top:18px;text-align:left}
+  .wrong-list h3{font-size:13px;font-weight:800;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+  .wrong-list h3 .ct{font-family:var(--en);background:var(--coral-soft);border-radius:999px;padding:1px 8px;font-size:11px}
+  .wi{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line)}
+  .wi .e{font-family:var(--en);font-weight:600;font-size:14px;color:var(--ink)}
+  .wi .k{font-size:13px;color:var(--ink-soft);text-align:right;word-break:keep-all}
+  .res-actions{display:grid;gap:10px;margin-top:20px}
+  footer{margin-top:auto;padding-top:20px;text-align:center;color:var(--ink-faint);font-size:11px}
+  footer b{font-family:var(--en);font-weight:600;letter-spacing:.04em}
+  .hide{display:none !important}
+  @media (max-width:380px){.term.en-mode{font-size:26px}.term.ko-mode{font-size:23px}.mc-card .q{font-size:23px}}
+  :focus-visible{outline:3px solid rgba(28,122,107,.45);outline-offset:2px;border-radius:8px}
+
+  /* --- v2 additions --- */
+  .seg{gap:3px;padding:3px}
+  .seg button{padding:9px 3px;font-size:12.5px;letter-spacing:-.02em}
+  .seg button .en{font-size:9px;letter-spacing:.02em}
+  @media (max-width:380px){.seg button{font-size:11.5px}.seg button .en{font-size:8px}}
+  .chap.rnd .badge{background:var(--teal)}
+  .chap.rnd[aria-pressed="true"]{border-color:var(--teal);background:var(--teal-soft);box-shadow:inset 0 0 0 1px var(--teal)}
+  .chap.rnd .badge.ico{font-size:14px;padding:4px 8px}
+  .blankq{font-family:var(--en);font-weight:700;font-size:25px;line-height:1.34;color:var(--ink);word-break:break-word}
+  .blankq .blk{display:inline-block;min-width:64px;text-align:center;border-bottom:2.5px solid var(--coral);color:var(--coral);font-weight:800;margin:0 3px;vertical-align:baseline}
+  .blankq .blk.reveal{color:var(--teal-deep);border-color:var(--teal)}
+  .bko{margin-top:14px;font-size:15px;font-weight:700;color:var(--teal-deep);background:var(--teal-soft);display:inline-block;padding:6px 12px;border-radius:9px;line-height:1.4;word-break:keep-all}
+  .choices.en .choice{font-family:var(--en);font-weight:600}
+  .choices.en .choice span:last-child{font-family:var(--en)}
+  .mc-card .ask.blanklbl{color:var(--coral)}
+
+  /* --- v3: accordion groups + polysemy senses --- */
+  .grp{display:flex;align-items:center;gap:11px;border:1px solid var(--line-2);background:#fff;border-radius:13px;cursor:pointer;padding:13px 14px;text-align:left;transition:.16s;color:var(--ink);width:100%;font-family:var(--ko)}
+  .grp:hover{background:#f6f8fa}
+  .grp .g-ar{font-family:var(--en);color:var(--ink-faint);transition:transform .18s;font-size:12px;flex:none}
+  .grp.open .g-ar{transform:rotate(90deg);color:var(--teal)}
+  .grp .g-tx{display:flex;flex-direction:column;line-height:1.2}
+  .grp .g-nm{font-weight:800;font-size:15px}
+  .grp .g-meta{font-size:10.5px;color:var(--ink-faint);font-family:var(--en);letter-spacing:.02em;margin-top:2px}
+  .grp .g-cnt{margin-left:auto;text-align:right;flex:none;font-size:10px;color:var(--ink-faint)}
+  .grp .g-cnt b{display:block;font-family:var(--en);font-size:16px;font-weight:700;color:var(--ink)}
+  .grp.open{border-color:var(--teal);background:var(--teal-soft)}
+  .grp.open .g-cnt b{color:var(--teal-deep)}
+  .grp-body{display:grid;gap:9px;padding:2px 0 4px 12px;margin-left:7px;border-left:2px solid var(--line-2)}
+  .tag.poly{background:var(--gold-soft);color:#8a6010;font-family:var(--ko);letter-spacing:0;text-transform:none}
+  .term.poly-head{font-size:23px;margin-bottom:2px}
+  .card .note.senses{border-top:1px dashed var(--line-2);padding-top:13px}
+  .slist{display:flex;flex-direction:column;gap:11px}
+  .sense{display:flex;gap:11px;align-items:flex-start;cursor:pointer}
+  .sense .s-chk{margin-top:2px;width:19px;height:19px;flex:none;accent-color:var(--teal);cursor:pointer}
+  .s-main{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+  .s-pos{align-self:flex-start;font-size:10.5px;font-weight:700;color:var(--teal-deep);background:var(--teal-soft);border-radius:6px;padding:1px 8px;font-family:var(--ko)}
+  .s-pos.num{font-family:var(--en);color:#8a6010;background:var(--gold-soft)}
+  .s-ko{font-size:15px;font-weight:800;color:var(--ink);word-break:keep-all;line-height:1.35}
+  .s-ex{font-family:var(--en);font-size:12.5px;color:var(--ink-soft);line-height:1.45;margin-top:2px}
+  .s-exk{font-size:11.5px;color:var(--ink-faint);line-height:1.45;word-break:keep-all}
+  .sense input:checked ~ .s-main .s-ko{color:var(--teal-deep)}
+  .sense input:checked ~ .s-main .s-pos{background:var(--teal);color:#fff}
+  .s-note{margin-top:13px;font-size:12px;color:var(--ink-soft);background:var(--gold-soft);border-radius:10px;padding:10px 12px;line-height:1.55;word-break:keep-all}
+  @media (max-width:380px){.term.poly-head{font-size:20px}.s-ko{font-size:14px}}
+</style>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="eyebrow">Power TOEIC · VOCA</div>
+      <h1>파워토익 VOCA 퀴즈</h1>
+      <div class="sub">챕터를 고르고 외우는 방식을 선택하세요</div>
+    </div>
+    <div class="day-chip" id="totalChip">단어 –</div>
+  </header>
+
+  <div class="seg" role="group" aria-label="모드 선택">
+    <button id="modeFlash" aria-pressed="true">플래시카드<span class="en">FLASH</span></button>
+    <button id="modeMC" aria-pressed="false">뜻 고르기<span class="en">MEANING</span></button>
+    <button id="modeBlank" aria-pressed="false">빈칸 채우기<span class="en">FILL-IN</span></button>
+  </div>
+
+  <section id="setup">
+    <div class="panel">
+      <div class="label"><span class="ix">STEP</span> 외울 챕터를 골라요</div>
+      <div class="chaps" id="chaps"></div>
+      <div class="toggle-row">
+        <div class="t-label"><b>유의어·추가 표현 포함</b><span>cf.·동의어(=)·↔·박스 추가 표현도 함께 출제</span></div>
+        <label class="switch"><input type="checkbox" id="extras" checked><span class="slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <div class="t-label"><b>순서 섞기</b><span>매번 다른 순서로 출제</span></div>
+        <label class="switch"><input type="checkbox" id="shuffle" checked><span class="slider"></span></label>
+      </div>
+    </div>
+    <div class="start-bar">
+      <button class="btn btn-primary" id="startBtn">퀴즈 시작 · <span id="startCount">0</span>개</button>
+    </div>
+  </section>
+
+  <section id="quiz" class="hide">
+    <div class="qtop">
+      <div class="counter"><b id="qCur">1</b><span id="qTot"> / 0</span></div>
+      <div class="scoreline">
+        <span class="pill know" id="pillKnow">알아요 0</span>
+        <span class="pill again" id="pillAgain">다시 0</span>
+        <button class="quit" id="quitBtn">그만하기</button>
+      </div>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+
+    <div id="flashView">
+      <div class="card" id="card" role="button" tabindex="0" aria-label="카드 뒤집기">
+        <div class="card-top">
+          <span class="idx" id="cIdx">0001</span>
+          <span class="tag" id="cTag">ENGLISH</span>
+          <div class="tools">
+            <button class="tool audio" id="cAudio" aria-label="발음 듣기">🔊</button>
+            <button class="tool bm" id="cBm" aria-label="북마크" aria-pressed="false">☆</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="term en-mode" id="cTerm">deliver a speech</div>
+          <div class="note" id="cNote"></div>
+        </div>
+        <div class="card-hint" id="cHint">탭하면 뜻 보기</div>
+      </div>
+      <div class="grade">
+        <button class="g-again" id="gAgain">다시 볼래요</button>
+        <button class="g-know" id="gKnow">알아요</button>
+      </div>
+    </div>
+
+    <div id="mcView" class="hide">
+      <div class="mc-card">
+        <div class="mc-top">
+          <span class="idx" id="mIdx">0001</span>
+          <div class="tools">
+            <button class="tool audio" id="mAudio" aria-label="발음 듣기">🔊</button>
+            <button class="tool bm" id="mBm" aria-label="북마크" aria-pressed="false">☆</button>
+          </div>
+        </div>
+        <div class="q" id="mEn">deliver a speech</div>
+        <div class="ask">알맞은 뜻을 고르세요</div>
+        <div class="choices" id="choices"></div>
+      </div>
+      <div class="mc-next hide" id="mcNext"><button class="btn btn-primary" id="mcNextBtn">다음 →</button></div>
+    </div>
+
+    <div id="blankView" class="hide">
+      <div class="mc-card">
+        <div class="mc-top">
+          <span class="idx" id="bIdx">0001</span>
+          <div class="tools">
+            <button class="tool audio" id="bAudio" aria-label="발음 듣기">🔊</button>
+            <button class="tool bm" id="bBm" aria-label="북마크" aria-pressed="false">☆</button>
+          </div>
+        </div>
+        <div class="q blankq" id="bPhrase"></div>
+        <div class="bko" id="bKo"></div>
+        <div class="ask blanklbl">빈칸에 알맞은 단어를 고르세요</div>
+        <div class="choices en" id="bChoices"></div>
+      </div>
+      <div class="mc-next hide" id="blankNext"><button class="btn btn-primary" id="blankNextBtn">다음 →</button></div>
+    </div>
+  </section>
+
+  <section id="result" class="hide">
+    <div class="panel result">
+      <div class="big" id="rScore">0<small>/0</small></div>
+      <div class="headline" id="rHead">완료!</div>
+      <div class="msg" id="rMsg"></div>
+      <div class="res-stats">
+        <div class="stat know"><div class="v" id="rKnow">0</div><div class="l">알아요</div></div>
+        <div class="stat again"><div class="v" id="rAgain">0</div><div class="l">다시 볼 단어</div></div>
+      </div>
+      <div class="wrong-list hide" id="wrongList">
+        <h3>다시 볼 단어 <span class="ct" id="wrongCt">0</span></h3>
+        <div id="wrongItems"></div>
+      </div>
+      <div class="res-actions">
+        <button class="btn btn-primary hide" id="redoWrong">틀린 것만 다시 풀기</button>
+        <button class="btn btn-ghost" id="again">챕터 선택으로</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>박혜원 파워토익 VOCA · <b>STEP 1–18</b></footer>
+</div>
+<script>
+const ENTRIES = [[1,"deliver a speech","연설하다",1,[["syn","give a speech","연설하다"]]],[2,"use caution","주의하다",1,[["syn","exercise caution","주의하다"]]],[3,"reserve the right to +동사원형","~할 권한[권리]을 가지다",1,[]],[4,"place an order","(고객이) 주문하다",1,[]],[5,"fill one's order","(회사가) ~의 주문을 처리하다[이행하다]",1,[["syn","fulfill one's order","(회사가) ~의 주문을 처리하다[이행하다]"]]],[6,"launch a campaign","캠페인을 벌이다[시작하다]",1,[]],[7,"present an award","시상하다",1,[["cf","accept an award","수상하다"]]],[8,"address issues[problems]","문제를 처리하다[해결하다]",1,[["syn","resolve issues","문제를 처리하다[해결하다]"]]],[9,"acknowledge receipt of","~의 수령을 확인하다",1,[]],[10,"acknowledge one's hard work","~의 노고를 인정[치하]하다",1,[["cf","acknowledge one's dedication","헌신을 인정하다"]]],[11,"assemble a team","팀을 모으다[구성하다]",1,[]],[12,"raise awareness","인식[의식]을 드높이다, 경각심을 일깨우다",1,[["syn","promote awareness","인식[의식]을 드높이다, 경각심을 일깨우다"]]],[13,"raise funds","자금을 모으다",1,[]],[14,"win a contract","계약을 따내다[성사시키다]",1,[["syn","secure a contract","계약을 따내다[성사시키다]"]]],[15,"meet expectations","기대에 부응하다",1,[["cf","exceed expectations","기대를 뛰어넘다"]]],[16,"delegate one's authority","~의 권한을 위임하다",1,[]],[17,"draw a conclusion","결론을 내다",1,[]],[18,"encounter a problem","문제에 직면하다",1,[["syn","face a problem","문제에 직면하다"]]],[19,"assume a role","역할을 맡다",1,[["cf","assume responsibility","책임을 맡다"]]],[20,"seek assistance","도움을 구하다",1,[["syn","solicit assistance","도움을 구하다"]]],[21,"provide leadership","리더십을 발휘하다",1,[]],[22,"perform a task","업무를 수행하다",1,[["cf","perform a review","검토하다"]]],[23,"discontinue production","생산을 중단하다",1,[["ant","resume production","생산을 재개하다"]]],[24,"raise questions","의문을 제기하다",1,[]],[25,"call a meeting","회의를 소집하다",1,[]],[26,"fill a position","보직을 채우다, 충원하다",1,[["cf","hold a position","직책을 맡다"]]],[27,"fill out a survey[form]","설문지[양식]를 작성하다",1,[["syn","complete a survey","설문지[양식]를 작성하다"]]],[28,"take effect","시행되다, 효력을 발휘하다",1,[["syn","go into effect","시행되다, 효력을 발휘하다"]]],[29,"place an ad","광고를 내다",1,[["syn","run an ad","광고를 내다"]]],[30,"expand one's presence","~의 영향력을 넓히다",1,[["cf","establish one's presence","입지를 다지다"]]],[31,"expedite a process","과정을 신속하게 하다",2,[]],[32,"streamline a process","과정을 간소화하다",2,[]],[33,"have access to +명사","~에 접근[접속, 이용]할 수 있다",2,[["syn","gain access to","~에 접근[접속, 이용]할 수 있다"]]],[34,"undergo renovations","보수 공사를 하다",2,[["cf","undergo checks","점검을 받다"]]],[35,"accept an offer","제안을 수락하다",2,[]],[36,"decline an offer","제안을 거절하다",2,[]],[37,"take (the) initiative","솔선수범하다",2,[]],[38,"display initiative","진취성[독창력]을 발휘하다",2,[]],[39,"extend an invitation","초청하다, 초대하다",2,[]],[40,"extend an offer","제안하다",2,[]],[41,"extend one's gratitude","~의 감사를 표하다",2,[]],[42,"issue a refund","환불해 주다",2,[["syn","give a refund","환불해 주다"]]],[43,"meet the needs of","~의 요구를 충족시키다",2,[["syn","meet one's needs","~의 요구를 충족시키다"]]],[44,"compile data","데이터를 모으다",2,[]],[45,"pose a risk","해가 되다, 위험을 끼치다",2,[]],[46,"institute a policy","정책을 도입하다",2,[]],[47,"pay attention (to)","(~에) 관심을 기울이다",2,[["cf","call attention (to)","주의를 환기시키다"]]],[48,"build a reputation","명성을 쌓다",2,[["cf","earn a reputation","명성을 얻다"]]],[49,"build a relationship","관계를 구축하다",2,[["cf","solidify a relationship","관계를 공고히 하다"]]],[50,"voice (one's) concern","(~의) 우려를 나타내다",2,[["syn","express (one's) concern","(~의) 우려를 나타내다"]]],[51,"settle a dispute","분쟁을 해결하다",2,[]],[52,"obtain approval","승인을 얻다",2,[]],[53,"lift a ban","금지령을 철폐하다",2,[]],[54,"set a goal","목표를 세우다",2,[["cf","achieve a goal","목표를 성취하다"]]],[55,"pursue a degree","학위를 취득하다",2,[]],[56,"pursue a career","경력을 쌓다",2,[["cf","pursue a hobby","취미 생활을 하다"]]],[57,"land a job","직업을 구하다",2,[["syn","secure a job","직업을 구하다"]]],[58,"pay a visit","방문하다",2,[]],[59,"have reservations (about)","(~에 대해서) 의구심을 갖다",2,[]],[60,"retain a copy","사본을 보관하다",2,[]],[61,"pose a challenge","도전이 되다, 문제가 되다",3,[]],[62,"generate interest","관심을 불러일으키다",3,[]],[63,"represent (the) interests","이익을 대변하다",3,[]],[64,"consult a manual","설명서를 참고하다",3,[["syn","refer to","설명서를 참고하다"]]],[65,"determine the cause","원인을 밝혀내다[규명하다]",3,[]],[66,"promote tourism","관광업을 증진시키다",3,[]],[67,"submit a request","요청서를 제출하다",3,[]],[68,"form a committee","위원회를 결성하다",3,[]],[69,"issue a permit","허가증[허가서]을 발급해 주다",3,[]],[70,"accept cash","현금을 받다",3,[]],[71,"conduct a survey","설문 조사를 실시하다",3,[]],[72,"find (the) time","시간을 내다",3,[]],[73,"play a (key) role","(중요한) 역할을 하다",3,[]],[74,"take a moment","잠시 시간을 내다",3,[]],[75,"hire help","사람을 구하다, 직원을 고용하다",3,[]],[76,"measure the effect","효과를 측정하다",3,[]],[77,"provide a description","설명하다, 묘사하다",3,[]],[78,"cover expenses","비용을 부담하다",3,[]],[79,"conceive a plan","계획을 짜다[고안하다]",3,[]],[80,"build rapport","친분을 쌓다",3,[["syn","relationship","친분을 쌓다"]]],[81,"close a deal","거래를 성사시키다",3,[]],[82,"fulfill a request","요청을 이행하다[들어주다]",3,[["syn","accommodate","요청을 이행하다[들어주다]"]]],[83,"allow time to +동사원형","~할 시간을 잡다",3,[]],[84,"give a hand","도와주다",3,[]],[85,"return a favor","호의에 보답하다",3,[]],[86,"attract customers","고객을 유치하다[끌어모으다]",3,[["syn","draw customers","고객을 유치하다[끌어모으다]"]]],[87,"file a report","신고하다, 보고서를 작성하다",3,[]],[88,"market a product","제품을 판매하다",3,[]],[89,"reach an agreement","합의에 이르다",3,[["cf","sign an agreement","계약을 체결하다"]]],[90,"solidify one's position","~의 입지를 공고히 하다",3,[]],[91,"extensive experience","폭넓은 경험",4,[["cf","extensive knowledge","폭넓은 지식[조사]"]]],[92,"lively discussion","활발한 토론",4,[["cf","heated discussion","열띤 토론"]]],[93,"sizable demand","상당한 수요",4,[["syn","considerable demand","상당한 수요"]]],[94,"urgent attention","시급한 관심, 긴급한 주의",4,[]],[95,"informed decision","현명한 결정",4,[]],[96,"a wide range of","매우 다양한",4,[["syn","a full array of","매우 다양한"]]],[97,"regular customer","단골 고객",4,[["syn","frequent customer","단골 고객"]]],[98,"open position","공석",4,[["syn","vacant position","공석"]]],[99,"regular maintenance","정기 보수",4,[["cf","regular check","정기 점검"]]],[100,"reasonable prices","저렴한[적당한] 가격",4,[["syn","affordable prices","저렴한[적당한] 가격"]]],[101,"confidential nature","기밀성",4,[["syn","sensitive nature","기밀성"]]],[102,"key factor","주요[핵심] 요소",4,[["syn","key element","주요[핵심] 요소"]]],[103,"generous donation","후한[거액의] 기부",4,[["cf","generous support","후한 지원"]]],[104,"top priority","최우선 순위",4,[["syn","high(est) priority","최우선 순위"]]],[105,"distinguished career","화려한[빼어난] 경력",4,[["cf","distinguished professor","저명한 교수"]]],[106,"rigorous standard","엄격한[혹독한] 기준",4,[["cf","rigorous test","엄격한 테스트"]]],[107,"defective product","결함 있는 제품",4,[]],[108,"official opening","공식 개막",4,[["cf","official release","공식 출시"]]],[109,"supplementary material","보충 자료",4,[["cf","promotional material","홍보 자료"]]],[110,"smooth transition","순조로운 이행, 인수인계",4,[]],[111,"leisurely walk","느긋한[여유로운] 산책",4,[["syn","casual walk","느긋한[여유로운] 산책"]]],[112,"further information","추가 정보",4,[["cf","detailed information","상세한 정보"]]],[113,"brief interruption","일시적인 중단",4,[["syn","brief delay","일시적인 지연"]]],[114,"designated area","지정된 장소",4,[]],[115,"original copy","원본",4,[["cf","original packaging","원래의 포장"]]],[116,"the latest version","최신 버전",4,[["cf","updated version","업데이트된 버전"]]],[117,"future endeavors","앞으로 할 일들",4,[]],[118,"active account","사용 중인 계정[계좌]",4,[]],[119,"conservative estimate","적게 잡은 추산",4,[]],[120,"qualified applicant","자격을 갖춘 지원자",4,[["cf","successful applicant","합격자"]]],[121,"limited time","한정된[제한된] 시간",4,[]],[122,"stiff competition","치열한 경쟁",4,[["syn","fierce competition","치열한 경쟁"]]],[123,"sensible solution","합리적인 해결책",4,[]],[124,"pending order","미결 주문, 보류 중인 주문",4,[["cf","pending issue","미해결 문제, 현안"]]],[125,"advance registration","사전 등록",4,[["cf","advance notice","사전 통보"]]],[126,"thoroughly inspect","철저하게 점검하다",5,[["cf","carefully review","꼼꼼히 검토하다"]]],[127,"highly recommend","강력히 추천하다",5,[["syn","strongly recommend","강력히 추천하다"]]],[128,"strongly encourage","강력히 권하다",5,[]],[129,"work closely","긴밀하게 일하다",5,[]],[130,"work remotely","원격으로 일하다",5,[]],[131,"work diligently","부지런히 일하다",5,[]],[132,"work independently","독립적으로 일하다",5,[]],[133,"arrive punctually","시간을 엄수하여 도착하다",5,[]],[134,"work properly","제대로 작동하다",5,[]],[135,"fit perfectly","완벽하게 들어맞다",5,[]],[136,"clearly state","명확히 명시하다",5,[["syn","explicitly state","명확히 명시하다"]]],[137,"adversely affect","불리하게 영향을 미치다, 악영향을 미치다",5,[]],[138,"significantly increase","상당히 증가하다",5,[["syn","considerably increase","상당히 증가하다"]]],[139,"drastically increase","급격히 증가하다",5,[["syn","dramatically increase","급격히 증가하다"]]],[140,"incrementally increase","점차적으로 증가하다",5,[["cf","slightly increase","약간 증가하다"]]],[141,"far exceed","훨씬 초과하다",5,[]],[142,"take A seriously","A를 진지하게 받아들이다",5,[["ant","take A lightly","가볍게 받아들이다"]]],[143,"inadvertently omit","무심코 누락시키다",5,[["cf","accidentally omit","실수로 누락시키다"]]],[144,"speak highly of","~를 매우 칭찬하다, 높이 평가하다",5,[["ant","speak ill of ~","의 흉을 보다"]]],[145,"favorably respond","긍정적으로 반응하다",5,[]],[146,"formally open","정식으로 열다",5,[["syn","officially open","정식으로 열다"]]],[147,"closely monitor","면밀히 살펴보다",5,[]],[148,"actively seek","적극적으로 찾다",5,[]],[149,"arrive promptly at +시각","정각 ~에 도착하다",5,[]],[150,"enter (the data) accurately","(데이터를) 정확히 입력하다",5,[]],[151,"strategically locate","전략적으로 놓다[두다]",5,[["syn","strategically place","전략적으로 놓다[두다]"]]],[152,"listen intently","열심히 듣다",5,[["cf","listen carefully","주의 깊게 듣다"]]],[153,"rapidly grow","빠르게 성장하다",5,[["syn","quickly grow","빠르게 성장하다"]]],[154,"anonymously fill out","익명으로 작성하다",5,[["cf","completely fill out","완벽히 작성하다"]]],[155,"unanimously approve","만장일치로 승인하다",5,[]],[156,"heavily rely on","~에 크게 의존하다",6,[["cf","exclusively rely on","오직 ~에 의존하다"]]],[157,"end abruptly","갑자기 끝나다",6,[]],[158,"share externally","외부에 공유하다",6,[]],[159,"vary considerably","상당히 다르다",6,[]],[160,"act professionally","프로[전문가]답게 행동하다",6,[]],[161,"check periodically","정기적으로 확인하다",6,[["syn","check regularly","정기적으로 확인하다"],["cf","check frequently","자주 확인하다"]]],[162,"do so immediately","즉시 그렇게 하다",6,[]],[163,"progress smoothly","순조롭게 진행되다",6,[["syn","run smoothly","순조롭게 진행되다"],["syn","go smoothly","순조롭게 진행되다"]]],[164,"cautiously predict","조심스럽게 예측하다",6,[["cf","accurately predict","정확히 예측하다"]]],[165,"plan accordingly","~에 맞춰 계획하다",6,[["cf","adjust accordingly","~에 맞춰 조정하다"]]],[166,"resolve promptly","즉시 해결하다",6,[["cf","resolve swiftly","빠르게 해결하다"]]],[167,"thoroughly enjoy","대단히 즐거워하다, 매우 즐기다",6,[]],[168,"argue forcefully","강력히 주장하다",6,[]],[169,"come apart effortlessly","손쉽게 분리되다",6,[]],[170,"fully appreciate","충분히 인지하다[인정하다]",6,[]],[171,"perform reliably","안정적으로 작동하다",6,[["syn","work reliably","안정적으로 작동하다"]]],[172,"randomly select","무작위로 선택[선정]하다",6,[]],[173,"quickly approach","빠르게 다가오다",6,[]],[174,"briefly meet","잠시 만나다",6,[]],[175,"focus exclusively on","오직 ~에 중점을 두다",6,[]],[176,"gradually improve","점차 개선되다",6,[]],[177,"securely fasten","단단히 고정시키다[매다]",6,[]],[178,"comfortably seat","편안히 앉히다",6,[]],[179,"equally divide","균등하게 나누다",6,[]],[180,"barely read","겨우 읽다, 간신히 읽다",6,[]],[181,"cordially invite","정중히 초대하다",6,[]],[182,"patiently wait","참을성 있게 기다리다",6,[]],[183,"patiently answer","참을성 있게 대답하다",6,[]],[184,"significantly change","상당히[크게] 변하다",6,[["cf","dramatically change","극적으로 변하다"]]],[185,"strictly enforce","엄격히 시행하다",6,[]],[186,"newly appointed","새로 임명된",7,[["syn","recently appointed","최근에 임명된"]]],[187,"densely populated","인구 밀도가 높은",7,[["ant","sparsely populated","인구 밀도가 낮은"]]],[188,"well attended","많은 사람이 참석한",7,[]],[189,"highly regarded","매우 인정받는",7,[["syn","highly recognized","매우 인정받는"]]],[190,"highly qualified","뛰어난 자격을 갖춘",7,[["syn","well qualified","뛰어난 자격을 갖춘"]]],[191,"eagerly awaited","간절히 기다려 온",7,[["cf","long awaited","오래 기다려 온"]]],[192,"financially stable","재정적으로 안정적인",7,[["syn","financially solid","재정적으로 안정적인"],["syn","financially sound","재정적으로 안정적인"]]],[193,"heavily discounted","대폭 할인된",7,[]],[194,"barely noticeable","거의 눈에 띄지 않는",7,[["cf","barely detectable","거의 감지가 안 되는"]]],[195,"prominently posted","눈에 잘 띄게 게시된",7,[]],[196,"readily accessible","쉽게 접근[열람] 가능한",7,[["cf","readily available","쉽게 이용 가능한"]]],[197,"mutually beneficial","상호 이익이 되는",7,[]],[198,"cleverly concealed","교묘히 감춰진",7,[]],[199,"conveniently located","편리한 곳에 위치한, 입지가 좋은",7,[["cf","strategically located","전략적으로 위치한"]]],[200,"temporarily closed","일시적으로 (문을) 닫은",7,[]],[201,"tentatively scheduled","잠정적으로 일정이 잡힌",7,[]],[202,"unseasonably cold","계절에 맞지 않게 추운",7,[]],[203,"fully refundable","전액 환불 가능한",7,[]],[204,"fully operational","완전[전면] 가동되는",7,[]],[205,"designed specifically for","특히 ~을 위해 만들어진",7,[]],[206,"completely free of charge","완전히 무료인",7,[]],[207,"completely sold out","완전히 매진된",7,[]],[208,"commonly used","흔히 사용되는",7,[]],[209,"affordably priced","적정한[저렴한] 가격의",7,[]],[210,"exactly the same","정확히 같은",7,[]],[211,"briefly delayed","잠시 지연된",7,[]],[212,"broadly defined","광범위하게[폭넓게] 정의된",7,[]],[213,"almost complete","거의 완료된",7,[["syn","nearly complete","거의 완료된"]]],[214,"locally grown","현지에서 기른",7,[]],[215,"directly responsible","직접적으로 책임이 있는",7,[["ant","indirectly responsible","간접적으로 책임이 있는"]]],[216,"environmentally friendly","환경 친화적인",7,[]],[217,"markedly successful","눈에 띄게 성공한, 대단히 성공한",7,[]],[218,"marginally successful","미미하게 성공한",7,[]],[219,"blindly biased","맹목적으로 편향된",7,[]],[220,"separately wrapped","따로따로 포장된",7,[]],[221,"allow for","~을 감안하다, 참고하다",8,[]],[222,"participate in","~에 참가하다",8,[]],[223,"subscribe to","~을 구독하다, ~에 가입하다",8,[]],[224,"reside in","~에 살다, 거주하다",8,[["syn","live in","~에 살다"],["syn","dwell in","~에 살다"]]],[225,"search for","~을 찾다",8,[]],[226,"proceed with","~을 계속하다, 진행하다",8,[]],[227,"proceed to","~로 가다",8,[["syn","go to","~로 가다"],["syn","head to","~로 가다"]]],[228,"arrive at","~에 도착하다",8,[["syn","arrive in","~에 도착하다"]]],[229,"comply with","~을 준수하다",8,[["syn","conform to","~을 준수하다"],["syn","adhere to","~을 준수하다"],["syn","abide by","~을 준수하다"]]],[230,"care for","~를 돌보다",8,[]],[231,"attend to","~을 처리하다, 돌보다",8,[]],[232,"object to","~에 반대하다",8,[]],[233,"register for","~에 등록하다",8,[["syn","sign up for","~에 등록하다"]]],[234,"enroll in","~에 등록하다",8,[]],[235,"compete with","~와 경쟁하다",8,[["syn","compete against","~와 경쟁하다"]]],[236,"lead to","~로 이어지다, 결과가 ~이다",8,[]],[237,"look at","~을 보다",8,[]],[238,"look for","~을 찾다",8,[]],[239,"look into","~을 조사하다, 주의 깊게 살피다",8,[]],[240,"invest in","~에 투자하다",8,[]],[241,"cope with","~에 대처하다, 대응하다",8,[]],[242,"deal with","~을 처리하다, 다루다",8,[]],[243,"coincide with","~과 동시에 일어나다; ~과 일치하다",8,[]],[244,"collaborate with","~와 협력하다",8,[]],[245,"collaborate on","~에 대해 협력하다",8,[]],[246,"emerge as","~로 부상하다",8,[]],[247,"dispose of","~을 처리하다, 없애다",8,[]],[248,"refrain from","~을 자제하다, 삼가다",8,[["syn","abstain from","~을 자제하다"]]],[249,"interfere with","~을 방해하다",8,[]],[250,"succeed in","~에 성공하다",8,[]],[251,"succeed to","~의 뒤를 잇다, 물려받다",8,[]],[252,"respond to","~에 반응하다; ~에 응답하다",8,[]],[253,"consist of","~으로 구성되다",8,[]],[254,"result in","결과가 ~이다",8,[]],[255,"result from","원인이 ~이다",8,[]],[256,"specialize in","~을 전문으로 하다",9,[]],[257,"account for","~을 설명하다; (비율을) 차지하다",9,[]],[258,"belong to","~에 속하다, ~의 것이다",9,[]],[259,"refer to","~을 참조[참고]하다",9,[["syn","consult","~을 참조하다"]]],[260,"depend on","~에 의지하다, ~에 달려 있다",9,[["syn","rely on","~에 의지하다"],["syn","count on","~에 의지하다"],["syn","draw on","~에 의지하다"]]],[261,"care about","~을 신경 쓰다, ~에 관심을 가지다",9,[]],[262,"differ from","~과 다르다",9,[]],[263,"differ in","~면에서 다르다",9,[]],[264,"go through","~을 겪다; ~을 지나가다; ~을 조사하다",9,[]],[265,"suffer from","~로 고통받다",9,[]],[266,"benefit from","~로부터 이득을 얻다",9,[]],[267,"stop by","~에 들르다",9,[["syn","drop by","~에 들르다"],["syn","come by","~에 들르다"]]],[268,"adapt to","~에 적응하다",9,[]],[269,"leave for","~로 떠나다",9,[]],[270,"expand into","~로 진출하다",9,[]],[271,"put off","~을 미루다, 연기하다",9,[]],[272,"call off","~을 취소하다",9,[]],[273,"call for","~을 요구하다",9,[]],[274,"fill in","~을 채우다, 작성하다; 정보를 주다",9,[]],[275,"fill out","~을 작성하다, 기입하다",9,[]],[276,"concentrate on","~에 집중하다",9,[["syn","focus on","~에 집중하다"]]],[277,"turn out","~으로 드러나다, 판명나다",9,[]],[278,"work on","~에 착수하다, 애쓰다",9,[]],[279,"hand in","~을 제출하다",9,[["syn","turn in","~을 제출하다"]]],[280,"turn down","~을 거절하다",9,[]],[281,"revert to","~로 되돌아가다",9,[]],[282,"lag behind","~보다 뒤처지다",9,[["syn","fall behind","~보다 뒤처지다"]]],[283,"ask about","~에 대해 물어보다[문의하다]",9,[["cf","ask for","~을 요청하다"]]],[284,"go over","~을 검토하다, 조사하다",9,[["syn","look over","~을 검토하다"]]],[285,"long for","~을 열망하다",9,[]],[286,"qualify for","~의 자격을 얻다",9,[]],[287,"mark down","~의 가격을 내리다",9,[["syn","cut down","~의 가격을 내리다"]]],[288,"pay for","~의 값을 지불하다",9,[]],[289,"cater to","~의 기호에 맞추다",9,[]],[290,"shop for","~을 사다, 구입하다",9,[]],[291,"at work","근무 중인, 직장에서",10,[]],[292,"in bulk","대량으로",10,[]],[293,"in circulation","유통 중인",10,[]],[294,"in place","제 자리에, 가동 중인, ~할 준비가 되어 있는",10,[["ant","out of place","제 자리에 있지 않는, 부적절한, 맞지 않는"]]],[295,"in general","일반적으로",10,[["syn","generally","일반적으로"]]],[296,"on duty","근무 중인",10,[["cf","on call","대기 중인"]]],[297,"on vacation","휴가 중인",10,[["syn","on leave","휴가 중인"]]],[298,"with care","조심히, 신중히",10,[]],[299,"at ease","걱정 없는, 편안한",10,[]],[300,"with ease","쉽게",10,[]],[301,"in business","영업 중인, 운영 중인",10,[["syn","in operation","영업 중인, 운영 중인"]]],[302,"on business","사업 차, 업무 차, 볼일이 있어",10,[]],[303,"in time","시간에 맞춰, 제 시간에",10,[]],[304,"on time","정각에, 시간을 어기지 않고",10,[]],[305,"in (its) entirety","전부, 전체적으로",10,[]],[306,"in private","다른 사람이 없는 데서",10,[["ant","in public","사람들이 있는 데서"]]],[307,"in stock","재고가 있는",10,[["ant","out of stock","재고가 없는"]]],[308,"out of order","고장 난",10,[]],[309,"out of print","절판된",10,[]],[310,"out of service","사용 불가능한, 작동되지 않는",10,[]],[311,"under consideration","고려 중인",10,[]],[312,"under pressure","압박을 받는, 스트레스를 받는",10,[]],[313,"under renovation","보수 공사 중인",10,[]],[314,"under review","검토 중인",10,[]],[315,"under the supervision (of)","(~의) 감독 하에 있는",10,[]],[316,"on average","평균적으로, 대체로",10,[["cf","above average / below average","평균 이상 / 평균 이하"]]],[317,"beyond description","설명할 수 없는",10,[]],[318,"beyond repair","수리가 불가능한, 수리할 수 없을 정도로",10,[]],[319,"from scratch","맨 처음부터, 무에서부터",10,[]],[320,"in demand","수요가 있는",10,[]],[321,"on demand","요구만 있으면, 주문형의",10,[]],[322,"in use","사용 중인",10,[]],[323,"of use","쓸모 있는, 유용한",10,[["ant","of no use","쓸모가 없는"]]],[324,"upon arrival","도착 즉시",10,[["syn","on arrival","도착 즉시"]]],[325,"upon request","요청 시",10,[["syn","on request","요청 시"]]],[326,"with caution","조심히, 신중히",10,[["syn","with care","조심히, 신중히"]]],[327,"on the rise","증가하는, 오름세에 있는",10,[["ant","on the wane","줄어드는, 하락세에 있는"]]],[328,"on the agenda","의제에 오른, 상정된",10,[]],[329,"in one's absence","~가 부재 중인, ~가 없는 사이에",10,[["ant","in one's presence","~가 출석한 가운데"]]],[330,"to no avail","보람 없이, 소용 없이, 헛되이",10,[]],[331,"at intervals","간격을 두고",11,[]],[332,"at one's discretion","~의 재량으로",11,[]],[333,"at one's disposal","~의 마음대로 쓸 수 있는, ~의 처분에 맡긴",11,[]],[334,"around the corner","(시기적으로) 임박한, 얼마 남지 않은; (장소적으로) 모퉁이를 돌아서",11,[]],[335,"by mistake","실수로",11,[]],[336,"by surprise","불시에, 뜻밖에",11,[]],[337,"in this respect","이 점에 있어서, 이런 면에서",11,[]],[338,"in advance","미리, 먼저",11,[]],[339,"in conclusion","끝으로, 마지막으로",11,[["syn","in closing","끝으로, 마지막으로"]]],[340,"in detail","자세히, 상세히",11,[]],[341,"in error","잘못하여, 실수로",11,[]],[342,"in order","제대로 된, 순차적으로",11,[]],[343,"in person","직접",11,[]],[344,"in production","생산 중인",11,[]],[345,"in question","문제의, 의심스러운",11,[["ant","out of question[doubt] · beyond question[doubt]","틀림없는, 의심할 여지가 없는"]]],[346,"in a hurry","바쁜, 서둘러, 급히",11,[["syn","in a rush","바쁜, 서둘러, 급히"]]],[347,"in total","전부, 총",11,[]],[348,"in transit","운송 중에, 수송 중에",11,[]],[349,"in writing","서면으로",11,[]],[350,"of interest","재미있는",11,[]],[351,"for (future) reference","(나중에) 참고할 수 있도록",11,[]],[352,"on display","전시 중인, 진열 중인",11,[]],[353,"on call","대기 중인",11,[]],[354,"on loan","대여한",11,[]],[355,"on installment","할부로",11,[]],[356,"on purpose","고의로, 일부러",11,[]],[357,"on site","현장에, 현지에",11,[["ant","off site","(어느 특정한 장소에서) 떨어진, 부지 밖의"]]],[358,"on track","제대로 진행되고 있는",11,[]],[359,"on reserve","(대출) 예약이 되어 있는, 예약 상태인",11,[]],[360,"on sale","판매되는; 할인 중인",11,[["cf","for sale","판매용의"]]],[361,"to date","지금까지",11,[]],[362,"to an extent","어느 정도(까지는), 다소",11,[["syn","to some extent","어느 정도(까지는), 다소"]]],[363,"to the point","요점만 얘기하는, 간단명료한",11,[["ant","beside the point","요점을 벗어난"]]],[364,"beyond (one's) expectations","(~의) 기대 이상으로",11,[]],[365,"under control","통제되는, 제어되는",11,[["ant","out of control · beyond control","통제 불능의, 수습할 수 없는"]]],[366,"under warranty","보증 기간 하에 있는, 보증 기간이 아직 끝나지 않은",11,[]],[367,"within the city limits","시내에 있는",11,[]],[368,"within walking distance","걸어갈 수 있는 거리에 있는",11,[]],[369,"outside the normal business hours","(정규) 영업 시간 외의, 근무 시간 외의",11,[]],[370,"since one's inception","(~의) 시작부터",11,[]],[371,"access to","~로의 접근[열람, 이용]",12,[]],[372,"advance in","~에서의 진보[발전]",12,[["cf","advancement to","~로의 승진[승격]"]]],[373,"attention from","~로부터의 주목[관심]",12,[["cf","attention to","~에 집중[주목]"]]],[374,"alternative to","~에 대한 대안[해결책]",12,[]],[375,"career in","~에서의 경력",12,[["cf","experience in","~에서의 경험"]]],[376,"comment on","~에 대한 의견[논평, 언급]",12,[]],[377,"concern over","~에 대한 근심[우려, 걱정]",12,[["syn","concern about[for]","~에 대한 근심[우려, 걱정]"]]],[378,"dispute over","~에 대한 분쟁[논란, 논쟁]",12,[]],[379,"demand for","~에 대한 요구[수요]",12,[]],[380,"enhancement to","~의 향상",12,[["cf","adjustment[modification·revision] to","~로의 변경[수정]"]]],[381,"flair for","~에 대한 재능[솜씨, 재주]",12,[["syn","talent for","~에 대한 재능[솜씨, 재주]"]]],[382,"inquiries[inquiry] about","~에 대한 문의",12,[]],[383,"influence on","~에 대한[미치는] 영향[여파]",12,[["syn","impact on","~에 대한[미치는] 영향[여파]"]]],[384,"information about","~에 관한 정보",12,[["syn","information on[as to·regarding·concerning·pertaining to]","~에 관한 정보"]]],[385,"gap between","~간의 간격, ~사이의 차이",12,[["syn","a space between","~에서의 (공간적) 틈"]]],[386,"lead over","~에 대한 우위, ~보다 선두",12,[]],[387,"passion for","~에 대한 열의[열정]",12,[]],[388,"perspective(s) on","~에 대한 관점[견해, 시각]",12,[]],[389,"potential for","~에 대한 잠재력[가능성]",12,[]],[390,"priority over","~보다 우선(시), ~보다의 우선권",12,[]],[391,"problem with","~이 가진[~에 대한] 문제점",12,[]],[392,"proximity to","~에의 인접(성), ~ 부근",12,[["syn","adjacency to","~에의 인접(성), ~ 부근"]]],[393,"reason for","~에 대한 이유",12,[]],[394,"rebate on","~에 대한 환급[환불]",12,[["cf","discount on","~에 대한 할인"]]],[395,"request for","~에 대한 요청",12,[]],[396,"reservation for","~에 대한 예약",12,[]],[397,"reservation(s) about","~에 대한 의구심[주저함]",12,[]],[398,"solution to","~에 대한[~로의] 해결책",12,[]],[399,"standard for","~에 대한 기준[표준]",12,[]],[400,"workshop on","~에 관한 워크숍",12,[["cf","seminar on","~에 관한 세미나"]]],[401,"be responsible for","~을 책임지다, 담당하다",13,[]],[402,"be exempt from","~에서 면제되다",13,[]],[403,"be eligible for","~의 자격이 있다",13,[]],[404,"be aware of","~을 알다",13,[]],[405,"be resistant to","~에 강하다, ~에 저항력이 있다",13,[]],[406,"be vulnerable to","~에 취약하다",13,[]],[407,"be responsive to","~에 즉각 반응[대응]하다",13,[]],[408,"be receptive to","~을 잘 받아들이다",13,[]],[409,"be qualified for","~에 적임이다, 자격이 있다",13,[]],[410,"be accessible to","~을 열람할 수 있다, ~에 접근할 수 있다",13,[]],[411,"be enthusiastic about","~에 대해 열정적이다[열광하다]",13,[["syn","be passionate about","~에 대해 열정적이다[열광하다]"]]],[412,"be selective about","~에 대해 까다롭다",13,[]],[413,"be concerned about","~에 대해 걱정하다",13,[]],[414,"be concerned with","~과 관련되다",13,[]],[415,"be popular with[among]","~에게 인기가 있다",13,[]],[416,"be compatible with","~과 호환되다[어울리다]",13,[]],[417,"be confident in","~에 대해 자신 있다",13,[]],[418,"be appreciative of","~에 대해 감사하다",13,[]],[419,"be representative of","~을 대표하다",13,[]],[420,"be indicative of","~을 나타내다, 시사하다",13,[]],[421,"be reflective of","~을 반영하다",13,[]],[422,"be different from","~과 다르다",13,[]],[423,"be different in","~면에서 다르다",13,[]],[424,"be suitable for","~에 적합하다, 적절하다",13,[["syn","be adequate for","~에 적합하다, 적절하다"]]],[425,"ideal for","~에 이상적인, 적절한",13,[]],[426,"be capable of","~을 할 수 있다",13,[]],[427,"be reminiscent of","~을 연상시키다, 회상하게 하다",13,[]],[428,"be dedicated to","~에 전념하다, 헌신하다",13,[["syn","be devoted[committed] to","~에 전념하다, 헌신하다"]]],[429,"be equivalent to","~과 같다, 상응하다",13,[]],[430,"be equal to","~과 같다, 동일하다",13,[]],[431,"be identical to","~과 동일하다",13,[]],[432,"the same as","~과 같은",13,[]],[433,"be similar to","~과 유사하다",13,[]],[434,"superior to","~보다 우수한",13,[]],[435,"inferior to","~보다 못한",13,[]],[436,"close to","~에 가까운, ~에 인접한",13,[]],[437,"be used to + 동명사","~에 익숙하다",13,[["syn","be[get] accustomed to + 동명사","~에 익숙하다"]]],[438,"be entitled to + (동)명사/동사원형","~의 자격이 있다, ~할 자격이 있다",13,[]],[439,"be ready for","~할 준비가 되어 있다",13,[]],[440,"be proud of","~을 자랑스러워하다",13,[]],[441,"be pleased with","~에 기뻐하다, 만족해하다",14,[]],[442,"be skeptical of","~에 대해 회의적이다",14,[]],[443,"be considerate of","~를 배려하다",14,[]],[444,"be attentive to","~에 주의를 기울이다",14,[]],[445,"be satisfied with","~에 만족하다",14,[]],[446,"be dependent on[upon]","~에 의존하다, 달려 있다",14,[["syn","be reliant[contingent] on[upon]","~에 의존하다, 달려 있다"]]],[447,"be noted for","~으로 유명하다",14,[["syn","be famous[well-known] for","~으로 유명하다"]]],[448,"be compliant with","~을 따르다, ~에 순응하다",14,[]],[449,"be interested in","~에 관심[흥미]이 있다",14,[]],[450,"be free of","~이 없다",14,[]],[451,"be limited to","~으로 한정[제한]되다",14,[]],[452,"complete with","~이 완비된",14,[]],[453,"be short of[on]","~이 부족하다",14,[]],[454,"be done with","~을 끝내다",14,[]],[455,"be comparable to","~에 맞먹다, 필적하다",14,[]],[456,"be equipped with","~이 갖춰져 있다",14,[]],[457,"be relevant to","~과 관련이 있다",14,[]],[458,"be familiar with","~에 친숙하다, ~을 잘 알고 있다",14,[["syn","be acquainted with","~에 친숙하다, ~을 잘 알고 있다"]]],[459,"be absent from","~에 불참하다, 결석하다",14,[]],[460,"be impressed with","~에 좋은 인상을 받다[감동하다]",14,[]],[461,"be credited with","~에 대해 공로를 인정받다",14,[]],[462,"be fond of","~을 좋아하다",14,[]],[463,"be based on","~에 기준[근거]을 두다",14,[]],[464,"be based in","~에 본사를 두다",14,[]],[465,"be high in","~의 함유량이 높다, ~이 풍부하다",14,[["syn","be rich in","~의 함유량이 높다, ~이 풍부하다"]]],[466,"be scheduled for","~로 예정되어 있다",14,[]],[467,"be crowded with","~으로 붐비다",14,[]],[468,"be skilled at[in]","~에 능숙하다",14,[]],[469,"be full of","~으로 가득 차다",14,[]],[470,"be subject to","~의 대상이 되다, ~하기 쉽다",14,[]],[471,"be opposed to","~에 반대하다",14,[]],[472,"preferable to","~보다 나은, ~보다 더 좋은",14,[]],[473,"be tasked with","~하는 업무를 맡다",14,[["syn","be responsible for","~을 책임지다, 담당하다"],["syn","be charged with","~을 책임지고 있다"],["syn","be in charge of","~을 담당하다, 맡다"]]],[474,"be late for","~에 늦다",14,[]],[475,"inclusive of","~을 포함하여",14,[]],[476,"be acceptable to","~의 마음에 들다, ~이 받아들일 수 있다",14,[]],[477,"be open to","~에게 공개되다, ~을 받아들일 용의가 있다",14,[]],[478,"be applicable to","~에 해당되다, 적용되다",14,[]],[479,"be busy with","~으로 바쁘다",14,[]],[480,"be native to","~가 원산지이다, ~ 출신이다",14,[]]];
+const EXTRA = [[1,"order status","주문 상황[현황]"],[1,"bulk order","대량 주문"],[1,"acknowledge one's obligation","맡은 바 임무[의무]를 인지하다"],[1,"an assembly","모임 (가산명사)"],[1,"assembly","조립 (불가산명사)"],[1,"sign a contract","계약서에 서명하다, 계약을 체결하다"],[1,"terminate a contract","계약을 종료하다"],[1,"extend a contract","계약을 연장하다"],[1,"cancel a contract","계약을 해지하다"],[2,"get[receive] a refund","환불을 받다"],[2,"claim a refund","환불을 요청하다"],[2,"be eligible for a refund","환불 자격이 있다"],[2,"full refund","전액 환불"],[2,"partial refund","부분 환불"],[2,"tax refund","세금 환급"],[2,"accommodate one's needs","~의 요구를 충족시키다"],[2,"earn fame","명성을 얻다"],[2,"earn recognition","인정을 받다"],[2,"earn a commendation","찬사를 받다, 표창을 받다"],[2,"grant approval","승인하다"],[2,"seek approval","승인을 구하다"],[2,"formal[official] approval","공식 승인"],[2,"final approval","최종 승인"],[2,"make a reservation","예약하다"],[2,"confirm one's reservation","~의 예약을 확인하다"],[2,"cancel one's reservation","~의 예약을 취소하다"],[2,"retain a title","(타이틀을) 지키다"],[2,"retain employees","직원을 보유하다"],[2,"retain one's name","이름을 그대로 유지하다"],[2,"retain customers","고객을 보유하다"],[3,"leading cause","주된 원인"],[3,"root cause","근본 원인"],[3,"good cause","대의명분, 정당한 이유"],[3,"major cause","주요 원인"],[3,"make a request","요청하다"],[3,"grant a request","요청을 들어주다"],[3,"refuse[decline] a request","요청을 거절하다"],[3,"on[upon] request","요청 시에, 요청에 의해"],[3,"conduct a poll","여론 조사를 실시하다"],[3,"conduct a study","연구를 실시하다"],[3,"conduct a review","논평하다"],[3,"measure the effectiveness of","~의 효과성을 평가하다"],[3,"measure the performance of","~의 성능을 측정하다"],[3,"measure the success of","~의 성공을 판단하다"],[3,"reach a consensus","합의에 이르다"],[3,"sign an agreement","계약을 체결하다, 계약서에 서명하다"],[3,"enter into an agreement","협정[파트너십]을 체결하다"],[4,"broad experience","폭넓은 경험"],[4,"comprehensive research","포괄적인[대대적인] 조사"],[4,"far-reaching influence","광범위한 영향"],[4,"significant expense","상당한 비용"],[4,"a wealth of knowledge","풍부한 지식"],[4,"an array of","다양한, 많은 ~"],[4,"existing[established] customer","기존 고객"],[4,"repeat customer","재방문 고객"],[4,"preferred customer","우대[우수] 고객"],[4,"potential customer","잠재 고객"],[4,"temporary position","임시직"],[4,"permanent position","정규직"],[4,"reasonably priced","저렴한[적당한] 가격의"],[4,"flawed[faulty] product","결함 있는 제품, 불량 제품"],[4,"fragile product","파손되기 쉬운 제품"],[4,"perishable product","상하기 쉬운 제품"],[4,"discontinued product","단종된 제품"],[4,"finished product","완제품"],[4,"friendly","친근한"],[4,"orderly","질서 정연한"],[4,"costly","값이 비싼, 비용이 많이 드는"],[4,"lively","생기 넘치는, 활발한"],[4,"timely","시기적절한"],[4,"surrounding area","주변 지역"],[4,"immediate area","인접한 지역"],[4,"remote area","먼 지역"],[4,"relevant area","해당 지역, 관련 분야"],[4,"metropolitan area","대도시권, 수도권"],[4,"residential area","주택 지역"],[4,"area of expertise","전문 분야"],[4,"a brief report","간략한 보고서"],[4,"brief A on B","A에게 B에 대해 간략히 설명하다"],[4,"experienced","경험 많은"],[4,"seasoned","숙련된"],[4,"skilled","노련한"],[4,"pending merger","계류 중인 합병 건"],[4,"impending","곧 닥칠, 임박한"],[5,"thoroughly check","철저하게 확인하다"],[5,"thoroughly enjoy","매우 즐기다, 대단히 즐거워하다"],[5,"readily recommend","기꺼이 추천하다"],[5,"certainly[definitely] recommend","확실히 추천하다"],[5,"far in advance","훨씬 미리, 한참 전에"],[5,"far beyond","한참 넘어서는"],[5,"react favorably to","긍정적으로 반응하다"],[5,"actively participate in","적극적으로 참여하다"],[5,"actively encourage","적극 권장하다"],[5,"actively promote","적극 홍보하다"],[5,"be actively considered","적극 검토 중이다"],[5,"be strategically located","전략적으로 유리한 곳에 위치해 있다"],[5,"be conveniently located","쾌적한[편리한] 곳에 위치해 있다"],[5,"be centrally located","중심지에 위치해 있다"],[6,"vary significantly","상당히 다르다"],[6,"vary depending on","~에 따라 다르다"],[6,"vary according to","~에 따라 다르다"],[6,"vary slightly","약간 다르다"],[6,"vary in","~면에서 다양하다"],[6,"vary from A to B","A에서 B까지 다양하다"],[6,"briefly visit","잠시 방문하다"],[6,"briefly speak","간략히 말하다"],[6,"briefly respond to","~에 간략히 답하다"],[6,"briefly interrupt","잠시 중단시키다"],[6,"briefly explain","간략히 설명하다"],[6,"focus solely on","오직 ~에 중점을 두다"],[6,"focus mainly on","주로 ~에 중점을 두다"],[6,"focus primarily on","주로 ~에 중점을 두다"],[6,"focus entirely on","전적으로 ~에 중점을 두다"],[6,"focus particularly on","특별히 ~에 중점을 두다"],[6,"evenly divide","균등하게 나누다"],[6,"evenly distribute","균등하게 분배하다"],[6,"barely audible","거의 들리지 않는"],[6,"barely understandable","이해하기 힘든"],[6,"barely pass","가까스로 합격하다"],[7,"newly opened","새로 문을 연"],[7,"newly renovated","최근에 보수된"],[7,"newly constructed","새로 건설된"],[7,"newly released","최근에 출시된"],[7,"recently opened","최근에 문을 연"],[7,"well respected","존경받는, 높이 평가되는"],[7,"well trained","교육을 잘 받은, 잘 훈련된"],[7,"well received","좋은 평가를 받은"],[7,"heavily populated","인구가 밀집한"],[7,"heavily polluted","심각하게 오염된"],[7,"heavily dependent","크게 의존하는"],[7,"heavily criticized","심하게 비판 받은"],[7,"prominently featured","두드러지게 나타난, 대서특필된"],[7,"prominently displayed","눈에 잘 띄게 진열된"],[7,"prominently decrease","눈에 띄게 감소하다"],[7,"readily distinguishable","쉽게 구별이 가능한"],[7,"readily available","쉽게 이용 가능한"],[7,"readily consent","선뜻 승낙하다"],[7,"readily accept","기꺼이 받아들이다"],[7,"readily agree","기꺼이 동의하다"],[7,"temporarily out of stock","일시적으로 재고가 없는"],[7,"temporarily unavailable","일시적으로 이용할 수 없는"],[7,"temporarily suspended","일시적으로 중단된"],[7,"completely different","완전히 다른"],[7,"completely lost","완전히 길을 잃은"],[7,"completely revised","전면 수정된"],[7,"completely changed","완전히 바뀐"],[7,"completely ruined","완전히 망가진"],[7,"heavily used","많이 사용된"],[7,"gently used","조심스럽게 사용된"],[7,"widely used","널리 사용되는"],[7,"environmentally sound","환경에 무해한"],[7,"environmentally sustainable","환경적으로 지속 가능한"],[7,"environmentally conscious","환경을 신경 쓰는"],[7,"moderately successful","제법 성공한"],[7,"commercially successful","상업적으로 성공한"],[7,"phenomenally successful","경이적으로 성공한"],[8,"go on -ing","~을 계속 이어서 하다"],[8,"keep -ing","~을 계속 이어서 하다"],[8,"attend","참석하다"],[8,"compete for","~을 두고 경쟁하다"],[8,"competing stores","경쟁하는 매장들"],[8,"competing goods","경쟁 상품들"],[8,"lead to a crisis","위기를 초래하다"],[8,"lead to confusion","혼란을 유발하다"],[8,"lead a discussion","토론을 이끌다"],[8,"lead a group","그룹을 지도하다"],[8,"examine","조사하다, 검토하다"],[8,"invest in a promising company","유망한 회사에 투자하다"],[8,"invest in the property market","부동산 시장에 투자하다"],[8,"coincidence","우연의 일치, 동시 발생"],[8,"coincident","(장소·시간이) 일치하는"],[8,"get in the way of","~을 방해하다"],[8,"obstruct","방해하다"],[8,"react to","~에 반응하다"],[8,"reply to","~에 응답하다"],[9,"refer to a manual","매뉴얼을 참고하다"],[9,"refer to A as B","A를 B로 일컫다"],[9,"refer A to B","A를 B에게 보내다"],[9,"benefit by","~로부터 이익을 얻다"],[9,"adapt oneself to","스스로를 ~에 적응시키다"],[9,"adapt well","잘 적응하다"],[9,"adapt quickly","빠르게 적응하다"],[9,"expand a business","사업을 확장하다"],[9,"expand an airport","공항을 확장하다"],[9,"expand operations","운영을 확대하다"],[10,"available","구입이 가능한 (in stock)"],[10,"unavailable","구입이 불가능한 (out of stock)"],[10,"It is malfunctioning.","그것은 오작동하고 있다."],[10,"It is not working properly.","그것은 제대로 작동하지 않는다."],[10,"It is in working order.","그것은 정상적으로 잘 작동하고 있다."],[10,"under the management of","~의 경영[관리] 하에 있는"],[10,"under the guidance of","~의 지도 아래"],[10,"under the leadership of","~의 지도 아래"],[10,"a rise in profits","매출의 상승"],[11,"at regular intervals","일정한 간격을 두고"],[11,"on a regular basis","정기적으로"],[11,"at the corner","모퉁이에"],[11,"in the corner","구석에"],[11,"of importance = important","중요한"],[11,"of use = useful","쓸모 있는"],[11,"of no use = useless","쓸모 없는"],[11,"with the purpose of","~하기 위해서, ~하려는 목적으로"],[11,"intentionally","고의로, 일부러 (= on purpose)"],[12,"sizable demand","상당한 수요"],[12,"unprecedented demand","전례 없는[역대급] 수요"],[12,"demand that + 주어 + (should) 동사원형","~하라고 명하다[요구하다]"],[12,"full potential","최대한의 잠재력"],[12,"potential customers","잠재 고객들"],[12,"potential buyers","잠재 구매자들"],[12,"potential investors","잠재 투자자들"],[12,"potential business","유망한 사업"],[12,"have a reservation about","~에 의구심을 가지다"],[13,"be accountable for","~에 대해 책임이 있다"],[13,"be in charge of","~을 담당하다, 맡다"],[13,"be charged with","~의 책임을 맡다"],[13,"be obligated to + 동사원형","~해야 할 의무가 있다"],[13,"be eligible to + 동사원형","~할 자격이 있다"],[13,"water-resistant","물이 잘 스며들지 않는"],[13,"waterproof","방수의, 방수가 되는"],[13,"be accessible by + 교통수단","~으로 접근 가능하다"],[13,"a way of + 동명사","~하는 방법"],[13,"be busy + 동명사","~하느라 바쁘다"],[13,"look forward to + 동명사","~을 학수고대하다"],[13,"in the process of + 동명사","~하는 과정에, ~하는 중에"],[13,"have difficulty[trouble] (in) + 동명사","~하는 데 어려움을 겪다"],[13,"be closed for","~때문에 문을 닫게 되다"],[13,"used to + 동사원형","~하곤 했다, ~했었다"],[13,"be ready to + 동사원형","~할 준비가 되어 있다"],[14,"be delighted[happy] with","~에 기쁘다"],[14,"be delighted[happy] to + 동사원형","~해서 기쁘다"],[14,"be content[gratified] with","~에 만족하다"],[14,"equipped with","(장비 등이) 갖춰진"],[14,"furnished with","(가구 등이) 갖춰진"],[14,"outfitted with","(시설, 사물 등이) 갖춰진"],[14,"start with","~로 시작하다"],[14,"begin with","~로 시작하다"],[14,"be finished with","~을 끝내다"],[14,"related to","~과 관련 있는"],[14,"pertinent to","~과 관련 있는"],[14,"associated with","~과 관련 있는"],[14,"familiarize oneself with","스스로 ~에 정통하다, ~을 잘 알게 되다"],[14,"be scheduled to + 동사원형","~로 예정되어 있다"],[14,"be adept at[in]","~에 능숙하다"],[14,"be talented for","~에 재능이 있다"],[14,"be filled with","~으로 가득 차다"],[14,"be packed[crowded] with","~으로 가득 차다, 붐비다"]];
+const CH = [
+  {s:1,name:"동사 + 명사 ①",code:"V+N",range:"0001–0030"},
+  {s:2,name:"동사 + 명사 ②",code:"V+N",range:"0031–0060"},
+  {s:3,name:"동사 + 명사 ③",code:"V+N",range:"0061–0090"},
+  {s:4,name:"형용사 + 명사",code:"ADJ+N",range:"0091–0125"},
+  {s:5,name:"부사 + 동사 ①",code:"ADV+V",range:"0126–0155"},
+  {s:6,name:"부사 + 동사 ②",code:"ADV+V",range:"0156–0185"},
+  {s:7,name:"부사 + 형용사",code:"ADV+ADJ",range:"0186–0220"},
+  {s:8,name:"동사 + 전치사 ①",code:"V+PREP",range:"0221–0255"},
+  {s:9,name:"동사 + 전치사 ②",code:"V+PREP",range:"0256–0290"},
+  {s:10,name:"전치사 + 명사 ①",code:"PREP+N",range:"0291–0330"},
+  {s:11,name:"전치사 + 명사 ②",code:"PREP+N",range:"0331–0370"},
+  {s:12,name:"명사 + 전치사",code:"N+PREP",range:"0371–0400"},
+  {s:13,name:"형용사 + 전치사 ①",code:"ADJ+PREP",range:"0401–0440"},
+  {s:14,name:"형용사 + 전치사 ②",code:"ADJ+PREP",range:"0441–0480"},
+  {s:15,name:"다품사 어휘 ①",code:"MULTI-POS",range:"0481–0515"},
+  {s:16,name:"다품사 어휘 ②",code:"MULTI-POS",range:"0516–0550"},
+  {s:17,name:"다품사 어휘 ③",code:"MULTI-POS",range:"0551–0585"},
+  {s:18,name:"다의어 ①",code:"POLYSEMY",range:"0586–0615"},
+];
+const RANDOM_N = 25;
+const relTag = {cf:"cf.", syn:"=", ant:"↔"};
+const kindLabel = {head:"", cf:"cf. 참고 표현", syn:"= 동의 표현", ant:"↔ 반의 표현", extra:"추가 표현"};
+
+const POLY = [[481,"budget",15,[["n","예산","The executive board asked all department managers to attend the budget meeting.","이사회는 모든 부서 관리자에게 예산 회의에 참석할 것을 요청했다."],["v","예산을 짜다, 예산을 할당하다","The city council budgeted $3,000 for the road repairs.","시 의회는 도로 보수에 3,000달러의 예산을 할당했다."],["a","저렴한, 저가의","I'll take a budget flight to reduce travel expenses.","나는 출장 경비를 줄이기 위해 저가 항공을 이용할 것이다."]],"budget이 '저가의'라는 형용사로 쓰이는 것에 주의."],[482,"recruit",15,[["v","채용하다","The SNT Group will make the most of the job fair to recruit new employees.","SNT 그룹은 신입 직원을 채용하기 위해 취업 박람회를 최대한 활용할 것이다."],["n","신입 사원, 신병","Ms. Lomahn is in charge of training new recruits this year.","Lomahn 씨는 올해 신입 직원 교육을 담당하고 있다."]],"명사로 사람을 나타내는 어휘: graduate 대학 졸업생 / local 지역 주민 / hire 신입 사원"],[483,"courtesy",15,[["n","예의, 호의, 공손함","Visitors will receive a free mug, courtesy of the NC Museum of History.","방문객들은 NC 역사 박물관의 호의로 무료 머그 컵을 받을 것이다."],["a","무료의, 공짜의","A courtesy van is available from the Cardiff Airport every day except Sunday.","일요일을 제외하고 매일 Cardiff 공항에서 출발하는 무료 밴을 이용할 수 있다."]],"(by) courtesy of ~의 호의로, ~ 덕분에"],[484,"direct",15,[["a","직접적인, 직행의","The most direct route to the airport is to take the S8 Highway.","공항으로 가는 가장 직행 경로는 S8 고속도로를 이용하는 것이다."],["v","지시하다; 보내다; 안내하다","Inquiries regarding lost items should be directed to the lost-and-found center.","분실물에 관한 문의는 분실물 센터로 보내져야 한다."]],"direct A to B / distribute·convey·ship·forward A to B"],[485,"schedule",15,[["n","일정, 스케줄","We completed the project a week ahead of schedule.","우리는 일정보다 일주일 빨리 그 프로젝트를 끝냈다."],["v","일정을 잡다","I called Ms. McKay to schedule a meeting to discuss the details.","나는 세부 사항을 논의하기 위한 회의 일정을 잡으려고 McKay 씨에게 전화했다."]],"ahead of schedule 일정보다 빨리 / schedule·call·arrange a meeting"],[486,"transition",15,[["n","변화, 전환, 이행","To ensure a smooth transition to the new e-mail system, a notification will be sent.","새 이메일 시스템으로 순조롭게 전환하기 위해 통지가 발송될 것이다."],["v","이행하다, 전환하다","Mr. Morrison has successfully transitioned to a leadership role.","Morrison 씨는 지도자 역할로 성공적으로 이행했다."]],""],[487,"caution",15,[["n","조심, 주의","Employees must exercise caution when handling glassware.","직원들은 유리 제품을 다룰 때 주의해야 한다."],["v","경고하다, 주의시키다","The expert cautioned that it is rather risky to invest in the textile business.","그 전문가는 섬유 사업에 투자하는 것이 다소 위험하다고 경고했다."]],""],[488,"act",15,[["n","행동; 법률","Spectators applauded the player for his act of friendliness.","관중들은 친절한 행동에 대해 그 선수에게 박수를 보냈다."],["n","(연극 등의) 막","Robert appeared in every act of the play.","Robert는 연극의 모든 막에 등장했다."],["v","행동을 취하다","The company needs to act quickly to lessen the damage.","피해를 줄이기 위해 그 회사는 빨리 행동을 취해야 한다."]],""],[489,"present",15,[["n","선물 (= gift)","Let's come up with the perfect retirement present for Gary.","Gary를 위한 완벽한 은퇴 선물을 생각해 보자."],["a","참석한(= in attendance); 현재의(= current)","There were 30 residents present at the public hearing.","공청회에 30명의 주민이 참석했다."],["v","제시하다; 증정하다","You should present your ID at the entrance.","당신은 입구에서 신분증을 제시해야 합니다."]],""],[490,"issue",15,[["n","문제, 쟁점; (간행물의) 호","Several employees had issues with their Internet connection.","몇몇 직원은 인터넷 연결에 문제가 있었다."],["v","발행하다; 발급하다","We need proof of residence to issue a parking permit.","우리는 주차 허가증을 발급하기 위해 거주 증명서가 필요하다."]],""],[491,"following",15,[["a","다음의, 그다음의","Please disregard the following information.","다음의 정보는 무시해 주시길 바랍니다."],["prep","~ 후에","Following the mayor's speech, some refreshment will be served.","시장의 연설 후에, 다과가 제공될 것이다."],["n","다음, 아래; 추종자들","The following is a list of local entrepreneurs.","다음은 지역 기업인들의 목록이다."]],""],[492,"award",15,[["n","상, 상품, 상금","Mr. Patterson received the employee of the year award.","Patterson 씨가 올해의 사원 상을 받았다."],["v","수여하다, 주다","Ms. Ortiz was awarded a year-end bonus of $5,000.","Ortiz 씨는 5,000달러의 연말 보너스를 받았다."]],"4형식 동사: grant[award]·teach·offer·assign·charge + A + B"],[493,"staff",15,[["n","직원","We need more staff to meet the deadline for the construction project.","그 공사 프로젝트 마감일을 맞추려면 직원이 더 필요하다."],["v","직원을 배치하다","Our booth was staffed by some student volunteers.","우리 부스에는 몇몇 학생 자원 봉사자가 배치되었다."]],""],[494,"line",15,[["n","라인, 선, 경계; 제품 종류","The students waited in line to enter the amusement park.","학생들은 놀이공원에 들어가기 위해 줄을 서서 기다렸다."],["v","~을 따라 늘어서 있다","Many coffee shops and restaurants line the street.","많은 커피숍과 식당들이 그 길을 따라 늘어서 있다."]],""],[495,"address",15,[["n","주소; 연설","Please give me your e-mail address so that I can send you the file.","파일을 보낼 수 있도록 이메일 주소를 알려 주세요."],["v","(문제 등을) 다루다, 처리하다","Rita has been in charge of addressing customer complaints.","Rita는 고객 불만을 처리하는 것을 담당해 왔다."],["v","연설하다","Gale Jackson will address the business leaders at the conference.","Gale Jackson은 컨퍼런스에서 재계 대표들에게 연설할 것이다."]],""],[496,"service",15,[["n","서비스","Please contact our customer service center if you have any questions.","질문이 있으면 저희 고객 서비스 센터에 연락 주십시오."],["v","점검하다; 제공하다","The team is planning to have all of the equipment serviced before the seminar.","팀은 세미나 전에 모든 장비를 점검할 계획이다."]],""],[497,"long",15,[["a","(길이가) 긴","Susan's speech was long yet informative.","Susan의 연설은 길었지만 유익했다."],["v","간절히 바라다","Mr. Longman longs for a promotion to CFO.","Longman 씨는 최고 재무 책임자로 승진하기를 간절히 바라고 있다."],["ad","오랫동안","I have been here long.","나는 여기서 오래 있었다."]],"long for ~을 간절히 바라다"],[498,"function",15,[["n","기능, 작용; 역할","The main function of the meeting is to share ideas freely.","회의의 주요 기능은 아이디어를 자유롭게 공유하는 것이다."],["n","행사, 의식","The Atina Hotel can accommodate all types of business functions.","Atina 호텔은 모든 종류의 비즈니스 행사를 위한 공간을 제공할 수 있다."],["v","작동하다, 기능하다","The built-in dishwasher was functioning normally this morning.","그 붙박이 식기세척기는 오늘 아침엔 제대로 작동하고 있었다."]],"function·malfunction은 자동사라 수동태 불가."],[499,"project",15,[["n","프로젝트, 계획","The price quote for the project has increased by 10 percent.","그 프로젝트의 견적 금액은 10퍼센트 증가했다."],["v","기획하다; 예상하다; 투사하다","As projected, operations will resume at the end of the month.","예상된 대로, 운영이 이번 달 말에 재개될 것이다."]],"as projected 예상된 대로 / as noted·as scheduled"],[500,"position",15,[["n","위치, 입장; 일자리, 직위","The candidate for the position must have strong interpersonal skills.","그 직에 지원한 지원자는 뛰어난 대인 관계 기술을 갖고 있어야 한다."],["v","배치하다","Refreshment stands will be positioned at several locations.","다과 가판대는 몇몇 장소에 배치될 것이다."]],""],[501,"due",15,[["a","~하기로 예정된","Ms. Kensington is due back from her business trip next week.","Kensington 씨는 다음 주에 출장에서 돌아올 예정이다."],["n","회비","The annual membership due includes access to all exhibits.","연회비에는 모든 전시회 출입 권한이 포함되어 있다."]],"be due to+동사원형 / due to+명사(~때문에) / be due back / be due on+시점"],[502,"prompt",15,[["a","즉각적인, 신속한","Sookie Catering's employees are very prompt and reliable.","Sookie Catering의 직원들은 매우 신속하며 신뢰할 수 있다."],["v","촉발하다, 촉구하다","The advisor prompted the CEO to interact with the employees.","자문가는 CEO에게 직원들과 교류할 것을 촉구했다."]],""],[503,"inconvenience",15,[["n","불편, 애로 사항","We apologize for the inconvenience you experienced due to the delay.","지연 때문에 겪으신 불편에 대해 사과드립니다."],["v","불편하게 하다","We regret to have inconvenienced the visitors.","방문객 분들에게 불편을 끼치게 된 것을 유감스럽게 생각합니다."]],""],[504,"market",15,[["n","시장","SOU Mobile's market share has doubled over the past 3 years.","SOU Mobile의 시장 점유율은 지난 3년간 두 배가 되었다."],["v","시장에 내놓다, 마케팅하다","Tos Fashion's new line has been marketed in many countries.","Tos Fashion의 새 라인은 여러 나라에서 시장에 출시되었다."]],""],[505,"note",15,[["n","노트, 필기, 메모","The intern took notes on everything the speaker discussed.","인턴은 연사가 논의한 모든 것을 필기했다."],["v","주목하다, 주의하다","Please note that the water filter should be replaced regularly.","정수기 필터는 정기적으로 교체되어야 한다는 점을 주의해 주십시오."],["v","언급하다","All exhibits are open to the public unless otherwise noted.","달리 언급된 바가 없다면 모든 전시회는 일반인에게 공개된다."]],"「접속사+(주어+be)+p.p.」: if·unless·once·although + p.p."],[506,"detail",15,[["n","세부 사항","Please contact Mark Henson for details about the company picnic.","회사 야유회 세부 사항은 Mark Henson에게 연락 주세요."],["v","자세히 말하다, 상세히 열거하다","Hyewon received a leaflet detailing the perks of subscribing.","혜원은 구독 특전을 상세히 열거한 광고지를 받았다."]],""],[507,"perfect",15,[["a","완벽한","Searching for the perfect job can be very difficult.","완벽한 직업을 찾는 것은 매우 어려울 수 있다."],["v","완벽하게 하다","Nora has spent nearly a decade perfecting her cookie recipe.","Nora는 쿠키 요리법을 완벽하게 하는 데 거의 10년을 보냈다."]],""],[508,"credit",15,[["n","신용; 융자; 공(적); 학점","The credit for the marketing success belongs to the entire sales staff.","마케팅 성공의 공은 영업팀 전체에 있다."],["v","입금하다","A full refund will be credited to your account within 3 days.","전액 환불금이 3일 이내로 당신의 계좌에 입금될 것입니다."],["v","공을 ~에게 돌리다","Ms. Rivera is credited with introducing the new recycling program.","Rivera 씨는 새 재활용 프로그램을 도입한 공을 인정받는다."]],""],[509,"local",15,[["a","지역의, 현지의","Mr. Malik took his clients to a local restaurant.","Malik 씨는 고객들을 현지 레스토랑으로 데려갔다."],["n","현지인, 주민","Speedy Motors decided to hire locals for several positions.","Speedy Motors는 몇몇 일자리에 현지인을 고용하기로 결정했다."]],""],[510,"expert",15,[["n","전문가","Joseph Lee is an expert in the field of finance.","Joseph Lee는 금융 분야의 전문가다."],["a","전문적인, 숙련된","Our expert landscapers will create the garden of your dreams.","우리 전문 조경사들이 꿈에 그리던 정원을 만들어 드립니다."]],""],[511,"station",15,[["n","역; 방송국; 사업소","Our hotel offers a shuttle service to and from Key West Station.","우리 호텔은 Key West 역을 왕복하는 셔틀 서비스를 제공한다."],["v","배치하다, 주둔시키다","Police officers are stationed at most elementary schools.","경찰관들은 대부분의 초등학교에 배치되었다."]],""],[512,"representative",15,[["a","대표하는, 나타내는","The house is representative of the architectural style of ancient Egypt.","그 집은 고대 이집트의 건축 양식을 나타내고 있다."],["n","대표, 대리인, 직원","The sales representative helped me find the perfect sofa.","그 판매 직원은 완벽한 소파를 찾는 것을 도와주었다."]],"be representative of ~을 나타내다, 대표하다"],[513,"price",15,[["n","가격, 물가; 대가","The store ensures customers can enjoy fresh produce at affordable prices.","그 상점은 고객들이 저렴한 가격에 신선한 농산물을 즐길 수 있도록 한다."],["v","가격을 매기다","Belmont Interiors boasts reasonably priced carpets and furniture covers.","Belmont 인테리어는 적정한 가격의 카펫과 가구 커버를 자랑한다."]],""],[514,"past",15,[["n","과거","In the past, very few people resided in this area.","과거에는 극소수의 사람들만 이 지역에 거주했다."],["a","지난","The demand for our products has increased over the past 10 months.","지난 10개월간 우리 제품의 수요가 증가했다."],["prep","~을 지나서, 넘어서","Rosie's Flea Market is located slightly past the post office.","Rosie's 벼룩시장은 우체국을 약간 지나서 위치해 있다."]],""],[515,"finance",15,[["n","재정, 자금","The July workshop is intended for the finance team only.","7월 워크숍은 오직 재무팀만을 대상으로 한다."],["v","자금을 대다","Carey asked the entrepreneur to finance her restaurant business.","Carey는 그 기업가에게 자신의 레스토랑 사업에 자금을 대 줄 것을 부탁했다."]],"= fund"],[516,"book",16,[["n","책","Please let me know when you're done with the book.","그 책을 다 읽으면 알려 주세요."],["v","예약하다 (= reserve)","I'd like to book a room for a private party.","사적인 파티를 열기 위한 방을 예약하고 싶습니다."]],""],[517,"notice",16,[["n","공고문, 알림, 통보","The new product launch will be delayed until further notice.","신제품 출시는 추후 통보가 있을 때까지 연기될 것이다."],["v","알아차리다, 주목하다","Members will notice a huge change this weekend.","회원들은 이번 주말 엄청난 변화를 알아차릴 것이다."]],""],[518,"name",16,[["n","이름; 평판, 명성; 유명인","Jonathan Shamal made his name by directing the thriller film.","Jonathan Shamal은 스릴러 영화를 감독하여 이름을 날렸다."],["v","이름을 짓다; 지정하다","The restaurant was named after its founder, Shawn Elwood.","그 레스토랑은 창립자 Shawn Elwood의 이름을 따서 지어졌다."]],""],[519,"outline",16,[["n","개요, 요점","An outline of the itinerary will be sent to all employees.","일정의 개요가 전 직원에게 발송될 것이다."],["v","요점을 말하다, 개요를 서술하다","The handout outlines the registration process.","이 유인물에는 등록 과정이 간략하게 서술되어 있다."]],""],[520,"interest",16,[["n","흥미, 관심","Thank you for your interest in booking a private room.","프라이빗 룸 예약에 관심을 가져 주셔서 감사합니다."],["n","이자; 이익, 이해관계","Our store offers interest-free credit for up to 6 months.","저희 상점은 최대 6개월간 무이자 신용 거래를 제공합니다."],["v","~의 관심을 끌다","Mr. Hansen's talk didn't interest the audience.","Hansen 씨의 연설은 청중의 관심을 끌지 못했다."]],"'흥미'일 때 불가산 / '이자'일 때 가산: interest rates 금리"],[521,"question",16,[["n","질문, 의문; 문제","Several tenants have raised a question about the cost of heating.","몇몇 세입자가 난방비에 대해 의문을 제기했다."],["v","질문하다, 심문하다","Mr. Burcham questioned his colleagues on whether they plan to attend.","Burcham 씨는 동료들에게 참석할지 물어보았다."]],""],[522,"novel",16,[["n","소설(책)","Dan Taylor's new novel is coming out on July 19.","Dan Taylor의 신작 소설이 7월 19일에 나온다."],["a","새로운, 신기한, 독창적인","Joy came up with a novel idea for the marketing campaign.","Joy는 마케팅 캠페인을 위한 새로운 아이디어를 생각해 냈다."]],""],[523,"level",16,[["n","수준, 단계; 층; 높이","The center offers various language classes at all levels.","그 센터는 모든 수준의 다양한 언어 수업을 제공한다."],["a","평평한, 대등한","Be sure to put up your camera on a level surface.","반드시 평평한 표면에 카메라를 세우세요."],["v","평평하게 하다","Please level your washing machine as stated in the manual.","설명서대로 세탁기를 평평하게 놓아 주세요."]],""],[524,"ruin",16,[["v","망치다, 파멸시키다","Even a minor mistake can ruin your career.","사소한 실수 하나조차도 당신의 경력을 망칠 수 있다."],["n","(주로 ruins) 폐허, 유적","They visited the ruins of Roman buildings.","그들은 로마 시대 건물들의 유적을 방문했다."]],""],[525,"about",16,[["prep","~에 관한","I'm calling about the e-mail you sent me last night.","지난밤 보낸 이메일에 관해서 전화했습니다."],["ad","대략, ~쯤","About 300 runners are expected to participate in the race.","대략 300명의 선수들이 경주에 참가할 것으로 예상된다."]],""],[526,"grant",16,[["v","허락하다, 승인하다, 주다","The PSA Bank granted me a $50,000 loan.","PSA 은행은 나에게 5만 달러의 대출을 승인해 주었다."],["n","보조금; 허가, 인가","Sonya is eligible for a government grant.","Sonya는 정부 보조금을 받을 자격이 있다."]],""],[527,"deposit",16,[["n","보증금, 착수금; 예금","A 15-percent deposit is required to secure an appointment.","예약을 확보하려면 15퍼센트의 보증금이 필요하다."],["v","두다, 맡기다; 예금하다","Be sure to deposit your belongings in a secure location.","소지품을 반드시 안전한 장소에 두세요."]],""],[528,"mark",16,[["n","자국, 표시; 점수","Our hotel received high marks for hygiene and decor.","우리 호텔은 위생과 실내 장식에서 높은 점수를 받았다."],["v","표시하다; 채점하다","Seating spaces marked with dotted lines are reserved for VIP members.","점선으로 표시된 좌석은 VIP 회원들을 위해 잡아 둔 곳이다."],["v","기념하다 (= celebrate, commemorate)","Patel Communications will host a reception to mark its 50th anniversary.","Patel Communications는 창립 50주년을 기념하기 위해 연회를 열 것이다."]],""],[529,"rate",16,[["n","속도; 요금, 가격; 비율","The AI industry is expanding at a rapid rate.","AI 산업은 빠른 속도로 확장하고 있다."],["v","평가하다, 순위를 매기다","Several cars were rated depending on fuel efficiency.","몇몇 차가 연료 효율에 따라 순위가 매겨졌다."]],"group·special·reduced·room·affordable·reasonable rate"],[530,"monitor",16,[["n","모니터, 화면, 감시 장치","Our fitness center has bicycles with advanced monitors.","우리 피트니스 센터에는 고급 모니터가 달린 자전거 운동 기구가 있다."],["v","추적 관찰하다, 감시하다","Each intern's job performance will be closely monitored.","각 인턴의 업무 실적은 면밀히 관찰될 것이다."]],""],[531,"regular",16,[["a","정기적인; 보통의; 정규의","For a full refund, please visit during regular business hours.","전액 환불을 받으시려면 정규 영업시간에 방문해 주십시오."],["n","단골손님; 정규 출연자","Mr. Daley has been a regular here for almost 10 years.","Daley 씨는 거의 10년간 이곳의 단골손님이었다."]],""],[532,"charge",16,[["n","요금","Your membership can be upgraded for an additional charge.","당신의 멤버십은 추가 요금을 내면 업그레이드 될 수 있다."],["n","책임, 담당","Sophie is in charge of shipping items.","Sophie는 제품 배송을 담당하고 있다."],["v","청구하다","They charged me $5,000 for car repairs.","그들은 차 수리 비용으로 5,000달러를 청구했다."],["v","~에게 일을 맡기다","Ms. Paige is charged with checking the appointment calendar.","Paige 씨는 예약 일정표를 검수하는 일을 담당한다."]],""],[533,"professional",16,[["a","전문적인, 직업의","A black suit will make you look professional at the meeting.","검은색 정장은 회의에서 당신을 전문적으로 보이게 할 것이다."],["n","전문가","Perfect Sound headsets are popular with professionals and amateurs alike.","Perfect Sound 헤드셋은 전문가와 아마추어 모두에게 인기가 있다."]],""],[534,"form",16,[["n","종류, 형태","You should present two forms of identification.","당신은 두 가지 종류의 신분증을 제시해야 합니다."],["n","서식, 양식","Please fill out the attached application form.","첨부된 신청서를 작성해 주세요."],["v","형성시키다, 결성하다","A hiring committee will be formed soon.","고용 위원회가 곧 결성될 것입니다."]],""],[535,"document",16,[["n","문서, 서류","You must provide a document to prove your residency.","거주를 증명하는 서류를 제출하셔야 합니다."],["v","기록하다","The causes of the power outage are well documented in this report.","정전의 원인들이 이 보고서에 잘 기록되어 있다."]],""],[536,"commercial",16,[["a","상업적인, 상업의","All commercial buildings should be examined at least once a year.","모든 상업 건물은 적어도 1년에 한 번 점검을 받아야 한다."],["n","광고","The commercial for Gemini Shoes was awarded the best advertisement of the year.","Gemini Shoes 광고는 올해 최고의 광고상을 받았다."]],""],[537,"select",16,[["v","선택하다, 고르다","Mr. Nguyen is reviewing the sites to select the best location for a café.","Nguyen 씨는 카페 최적의 입지를 고르기 위해 장소들을 검토하고 있다."],["a","엄선된, 최고의","Mr. Damon will analyze the experiment with a select group of researchers.","Damon 씨는 엄선된 연구원들과 함께 그 실험을 분석할 것이다."]],"select 엄선된 / selective 까다로운, 선별적인"],[538,"secure",16,[["a","안전한, 안심하는","The files should be stored in a secure location.","그 파일들은 안전한 장소에 보관되어야 한다."],["v","확보하다; 단단히 고정시키다","Please call ahead to secure a spot.","자리를 확보하시려면 미리 전화해 주세요."]],""],[539,"view",16,[["n","경관, 경치","I'm looking for an apartment with a view of the ocean.","바다 경관이 보이는 아파트를 찾고 있습니다."],["n","관점, 견해","In my view, the Lakeview Restaurant is the best place to hold a party.","내 견해로는 Lakeview 레스토랑이 파티를 열기에 최고의 장소다."],["v","보다, 둘러보다","Preferred customers may view all new items in advance.","우대 고객들은 모든 신제품을 먼저 볼 수 있다."],["v","여기다, 생각하다","Ms. Blaire is viewed as the most knowledgeable.","Blaire 씨가 가장 박식하다고 여겨진다."]],"in my view = in my point of view / view A as B"],[540,"complete",16,[["a","완벽한, 완전한, 완료된","Call Patty's Home Services for a complete inspection.","완전한 검사를 받으시려면 Patty's Home Services로 전화 주세요."],["v","완료하다 (= finish)","Is there enough time to complete the assignment?","그 업무를 끝낼 시간이 충분할까요?"],["v","기입하다(= fill in), 작성하다(= fill out)","Please complete a brief survey about the new ordering system.","새 주문 시스템에 관한 간략한 설문을 작성해 주십시오."]],""],[541,"store",16,[["n","상점, 가게","Mr. Lehman found the perfect building for his hardware store.","Lehman 씨는 철물점을 열 완벽한 건물을 찾았다."],["v","저장하다, 보관하다","You can store the leftover salad in the fridge.","남은 샐러드를 냉장고에 보관하실 수 있습니다."]],""],[542,"resume",16,[["n","(résumé) 이력서","E-mail your résumé and a cover letter to apply.","지원하려면 이력서와 자기소개서를 이메일로 보내 주세요."],["v","재개하다, 다시 시작하다","The restaurant was finally able to resume its business.","그 레스토랑은 마침내 영업을 재개할 수 있었다."]],""],[543,"last",16,[["a","지난; 마지막의","Several employees retired last year.","몇몇 직원이 지난해 퇴직했다."],["ad","가장 최근에; 마지막으로","When did you see Jessie last?","Jessie를 마지막으로 본 게 언제죠?"],["v","지속하다, 계속되다","The workshop will last about 2 hours.","그 워크숍은 대략 두 시간 동안 계속될 것이다."]],"동사 last는 수동태 불가 자동사."],[544,"wear",16,[["v","입다, 착용하다","Be sure to wear a safety helmet when riding a motorcycle.","오토바이를 탈 때에는 반드시 안전모를 착용하세요."],["v","닳다, 해지다","The leather sofa is starting to wear down.","그 가죽 소파는 해지기 시작하고 있다."],["n","해짐, 마모","Dry-cleaning is recommended to minimize wear and tear.","마모를 최소화하기 위해 드라이클리닝을 추천합니다."]],""],[545,"lower",16,[["a","더 낮은","Our annual revenues were lower than originally expected.","우리의 연간 수익은 원래 예상보다 더 낮았다."],["v","낮추다, 떨어뜨리다","Diana plans to lower the costs of all the products.","Diana는 모든 제품의 가격을 낮출 계획이다."]],""],[546,"alert",16,[["a","기민한, 경계하는","We should stay alert to the upcoming snowstorm.","우리는 다가오는 폭설에 경계 태세를 유지해야 한다."],["n","경계경보, 알림","A text message alert will be sent to all employees.","문자 알림이 전 직원에게 발송될 것이다."],["v","알리다, 경고하다","Ms. Moore will alert you of any changes in the schedule.","Moore 씨는 일정에 변경이 생기면 알릴 것입니다."]],""],[547,"feature",16,[["n","특징; 특집 기사","One of the app's most popular features is calorie alerts.","이 앱의 가장 인기 있는 특징 중 하나는 칼로리 경고 기능이다."],["v","~을 특징으로 삼다, 특집으로 하다","The exhibit will feature contemporary sculptures.","이 전시회는 현대 조각품을 주제로 할 것이다."]],""],[548,"estimate",16,[["n","견적서(= quote); 추산","It's a good idea to request estimates from different companies.","여러 회사로부터 견적서를 요청하는 것은 좋은 생각이다."],["v","어림잡다, 추산하다","Your order is estimated to arrive within 2-4 business days.","주문하신 물건은 영업일 기준 2-4일 이내에 도착할 것으로 추정됩니다."]],"be estimated at+금액 / be estimated to+동사원형"],[549,"cause",16,[["v","야기하다, 초래하다","We are still trying to determine what caused the power outage.","우리는 무엇이 정전을 야기했는지 알아내려 애쓰고 있다."],["n","원인, 이유","No one knows the cause of the shipping problem.","아무도 선적 문제의 원인을 모른다."],["n","대의 명분, 목적","The community center will hold a charity event for a good cause.","지역 주민 센터는 좋은 목적을 위해 자선 행사를 열 것이다."]],""],[550,"ease",16,[["v","완화하다, 편하게 해 주다","Numerous measures have been taken to ease traffic congestion.","교통 혼잡을 완화하기 위한 수많은 조치가 취해졌다."],["n","안락함, 편안함","Mr. Peters always makes his employees feel at ease.","Peters 씨는 항상 직원들이 편안하게 느끼도록 만든다."],["n","쉬움, 용이함","Guests can reach the hotel with ease by using its shuttle service.","손님들은 셔틀 서비스로 쉽게 호텔에 도착할 수 있다."]],"at ease 편안한 / with ease 쉽게 (= easily)"],[551,"manual",17,[["n","설명서","Consult the manual included with the fan for installation instructions.","설치 설명은 선풍기와 함께 포함된 설명서를 참고하세요."],["a","수동의, 손으로 하는","My new car has a manual transmission.","나의 새 차에는 수동 변속기가 있다."]],""],[552,"claim",17,[["v","주장하다","Ms. Masaki claimed that SNS is the most important tool for marketing.","Masaki 씨는 SNS가 가장 중요한 마케팅 도구라고 주장했다."],["v","요구하다, 권리를 주장하다","Items not claimed within 30 days will be donated to local charities.","30일 이내에 찾아가지 않는 물건들은 지역 자선 단체로 기부될 것이다."],["n","요구, 청구, 배상 요구","You should submit a signed claim form to the airline.","당신은 항공사에 서명한 청구서를 제출해야 합니다."]],""],[553,"fire",17,[["n","불, 화재","A fire inspection takes place four times a year at our company.","우리 회사에서 화재 점검은 일 년에 네 차례 이뤄진다."],["v","해고하다","Judy Gilmore has been fired from her position.","Judy Gilmore는 직책에서 해고되었다."]],""],[554,"count",17,[["n","계산; 총수, 수치","Mr. Chada will give you the final count of guests tomorrow.","Chada 씨가 내일 최종 손님 수를 알려 줄 것이다."],["v","수를 세다","Mr. Porter counted all the desks and chairs in the meeting room.","Porter 씨는 회의실 안의 모든 책상과 의자의 수를 세었다."],["v","중요하다","All feedback from our customers counts.","우리 고객들의 모든 피드백은 중요하다."]],""],[555,"associate",17,[["v","관련시키다, 연관 짓다","All expenses associated with your business trip will be covered.","당신의 출장과 관련된 모든 비용은 부담될 것입니다."],["n","동료, 제휴자, 직원","One of our sales associates will contact you shortly.","저희 영업 직원이 곧 연락할 것입니다."]],""],[556,"correct",17,[["a","정확한; 옳은","Please confirm that your phone number and e-mail address are correct.","당신의 전화번호와 이메일 주소가 정확한지 확인해 주세요."],["v","정정하다, 수정하다","Please correct the billing errors.","청구서 오류를 정정해 주세요."]],"정확한 = accurate / 옳은 = right / 정정하다 = rectify"],[557,"stock",17,[["n","재고(품), 저장(품)","The sweater you're looking for is currently not in stock.","찾으시는 스웨터는 현재 재고가 없습니다."],["n","주식, 증권","The company's stock price increased sharply in the 3rd quarter.","그 회사의 주가는 3분기에 급격히 올랐다."],["v","갖추다, 비축하다","Our store stocks a variety of knit dresses.","저희 가게는 다양한 니트 드레스를 갖추고 있습니다."]],""],[558,"reserve",17,[["v","예약하다","Ms. Huntington reserved a conference room last week.","Huntington 씨는 지난주에 회의실을 예약했다."],["v","(권리 등을) 갖다, 보유하다","The hall reserves the right to cancel an outdoor performance.","그 홀은 야외 공연을 취소할 권한을 갖고 있다."],["v","따로 남겨 두다, 보류하다","Some parking spaces have been reserved for sales staff only.","일부 주차 공간은 영업 사원들만을 위해 따로 남겨 두었다."],["n","보호 구역","Welcome to the Brookes Nature Reserve.","Brookes 자연 보호 구역에 오신 걸 환영합니다."]],""],[559,"audit",17,[["v","회계 감사를 하다","The BTN Company was audited by the federal government last month.","BTN 회사는 지난 달에 정부의 회계 감사를 받았다."],["n","철저한 검사, 검토","A recycling audit will be conducted this week.","재활용 검사가 이번 주에 실시될 것이다."]],""],[560,"chair",17,[["n","의자","Each booth includes a table and 3 chairs.","각 부스에는 탁자 한 개와 의자 세 개가 포함되어 있다."],["n","의장직, 의장","Mr. Moore has been reelected as the chair of the commission.","Moore 씨는 위원회의 의장으로 재선출되었다."],["v","의장을 맡다, 주재하다","Ashley Kim has agreed to chair the judging panel.","Ashley Kim은 심사 위원단의 의장을 맡는 데 동의했다."]],""],[561,"track",17,[["n","길, 선로, 트랙; 발자국","The train for Munich departs from track 10.","뮌헨 행 기차는 10번 선로에서 출발합니다."],["v","추적하다","You can track the status of your order on your mobile app.","모바일 앱에서 주문 상태를 추적할 수 있습니다."]],"on track 궤도에 오른, 순항하는"],[562,"bargain",17,[["n","싸게 사는 물건; 흥정","At the Sigma Computer Store, you can find good bargains.","Sigma 컴퓨터 상점에서 품질 좋고 싼 상품을 보실 수 있습니다."],["v","흥정하다, 거래하다","Dean had a hard time bargaining for the used truck.","Dean은 그 중고 트럭에 대해 흥정하는 데 어려움을 겪었다."]],""],[563,"place",17,[["n","장소, 자리; 집","I'm calling to ask you to change the meeting place.","회의 장소를 변경해 주실 것을 부탁드리려 전화했습니다."],["v","놓다, 두다","Recycling bins will be placed on each floor.","재활용 쓰레기통은 각 층에 놓일 것이다."],["v","(주문을) 하다; (신뢰를) 두다","I recently placed an order for a height-adjustable desk.","나는 최근에 높이 조절 책상을 주문했다."]],"in place 제자리에 / in places 곳곳에 / out of place 제자리에 있지 않은"],[564,"play",17,[["v","놀다, 경기에 뛰다; 연주하다","Megan can play various musical instruments.","Megan은 다양한 악기를 연주할 수 있다."],["v","역할을 하다; 연기하다","Mr. Morris played a pivotal role in securing the contract.","Morris 씨는 그 계약을 따내는 데 중추적인 역할을 했다."],["n","연극; 놀이","Please silence your mobile phone before the play begins.","연극이 시작하기 전에 휴대 전화를 무음으로 해 주십시오."]],""],[565,"list",17,[["n","목록, 리스트, 명단","Susan, can you e-mail me the guest list?","Susan, 손님 명단을 이메일로 보내줄 수 있나요?"],["v","열거하다, 작성하다","The 30 most influential people will be listed in the October issue.","가장 영향력 있는 30인이 10월 호에 열거될 것이다."]],""],[566,"number",17,[["n","수, 숫자, 번호","Please enter the serial number of your device.","당신의 장치의 일련 번호를 입력해 주세요."],["v","수를 세다, 번호를 매기다","All the equipment in the meeting room is numbered.","회의실 안의 모든 장비에는 번호가 매겨져 있다."],["v","(수가) 총 ~가 되다","The spectators at the marathon numbered more than 1,000.","마라톤 관중의 수가 총 1,000명 이상이 되었다."]],""],[567,"raise",17,[["v","올리다, 인상하다","Kansas City Bus plans to raise fares next year.","Kansas 시티 버스는 내년에 요금을 인상할 계획이다."],["v","기르다, 양육하다","Judy Gibson was raised in a German family.","Judy Gibson은 독일 가정에서 길러졌다."],["v","(자금을) 모으다","A charity sale will take place to raise funds for the library.","도서관 자금을 모으기 위해 자선 바자회가 열릴 것이다."],["n","임금 인상","Only a few staff members will receive a raise this year.","올해는 겨우 몇 명의 직원만 임금 인상을 받게 될 것이다."]],""],[568,"demand",17,[["v","요구하다","The client demanded a quick refund.","그 고객은 빠른 환불을 요구했다."],["n","수요","To meet the high demand, we will work overtime throughout the month.","높은 수요를 맞추기 위해 한 달 내내 야근을 할 것이다."]],""],[569,"must",17,[["v","~해야 한다","A progress report must be submitted by this Friday.","경과 보고서는 이번 주 금요일까지 제출해야 한다."],["n","필수적인 것, 필수품","Alps Footwear's boots are a must for hikers.","Alps Footwear의 부츠는 등산객들에게 필수품이다."]],""],[570,"fine",17,[["a","좋은, 질 높은; 건강한","You can find numerous fine dining establishments downtown.","시내에서 수많은 고급 식당을 찾을 수 있다."],["n","벌금","If you return equipment late, you must pay a fine.","장비를 늦게 반납하면 벌금을 내야 합니다."],["v","벌금을 부과하다","Jessie was fined for parking near a fire hydrant.","Jessie는 소화전 근처에 주차하여 벌금을 부과 받았다."]],""],[571,"pending",17,[["a","미결의, 미정의, 임박한","There are some pending orders we need to fill by tomorrow.","우리가 내일까지 처리해야 할 대기 중인 주문이 몇 가지 있다."],["prep","~까지, ~동안","The acquisition will be delayed pending Mr. Pitt's analysis.","그 인수는 Pitt 씨의 분석이 있을 때까지 미뤄질 것이다."]],"pending = until ~ / while waiting for ~"],[572,"land",17,[["n","땅, 육지, 지역","Our company purchased the land for the research building.","우리 회사는 연구 건물을 짓기 위해 그 땅을 매입했다."],["v","착륙하다","The flight from Boston landed two hours ago.","보스턴발 비행기는 두 시간 전에 착륙했다."],["v","얻다, 획득하다","Kevin landed his first job in Chicago.","Kevin은 시카고에서 첫 직업을 구했다."]],""],[573,"right",17,[["a","옳은, 정확한, 적합한","Finding the right employees is very important for success.","적합한 직원들을 찾는 것은 성공을 위해 매우 중요하다."],["n","권리","Be sure to exercise your right to vote.","투표권을 반드시 행사하세요."],["ad","곧, 바로; 정확히","Refreshments will be served right after Mr. Kim's speech.","다과는 Kim 씨의 연설 직후에 제공될 것이다."]],""],[574,"even",17,[["ad","심지어, ~조차","Even professional doctors must undergo the training.","심지어 전문 의사들도 그 교육을 받아야 한다."],["a","평평한, 고른; 대등한","A copy machine should be placed on an even surface.","복사기는 평평한 표면에 놓여야 한다."]],"even 심지어(비교급 수식 시 훨씬) / evenly 고르게, 대등하게"],[575,"purchase",17,[["v","구입하다","Leigh Properties purchased five hotels in this region.","Leigh Properties는 이 지역에서 호텔 다섯 개를 매입했다."],["n","구입한 것","Please submit all receipts of your purchases for reimbursement.","상환을 받기 위해 구매한 물건들의 모든 영수증을 제출해 주세요."]],""],[576,"ship",17,[["n","배","Two cruise ships are floating on the water.","두 척의 유람선이 물에 떠 있다."],["v","수송하다, 출하하다","Sue's Bakery promises to ship your purchases within 24 hours.","Sue's 제과점은 구매하신 물건을 24시간 안에 배송할 것을 약속합니다."]],""],[577,"quality",17,[["n","질, 품질; 우수함","I was very satisfied with the quality of service provided.","나는 제공된 서비스 품질에 매우 만족했다."],["a","고급의, 양질의","Maola Winery has a reputation for producing quality wines.","Maola 양조장은 고급 와인을 생산하는 것으로 평판이 나 있다."]],""],[578,"board",17,[["n","이사회, 위원회","The name of the new CEO will be announced at the board meeting.","새 CEO의 이름은 이사회에서 발표될 것이다."],["v","탑승하다, 승차하다","Please have your ticket ready before boarding the airplane.","비행기에 탑승하기 전에 티켓을 준비해 놓으세요."]],""],[579,"official",17,[["a","공식적인, 정식의","The official sponsors of the race will be selected soon.","그 경주의 공식 후원사들이 곧 선정될 것이다."],["n","공무원, 관계자, 임원","Local officials will participate in the fundraising event.","지역 공무원들은 그 모금 행사에 참석할 것이다."]],""],[580,"leave",17,[["v","떠나다","Make sure all equipment is turned off before leaving the office.","사무실을 나가기 전에 모든 장비의 전원이 꺼져 있는지 확인하세요."],["v","남기다, 그대로 두다","Any items left in a dormitory room after the semester will be discarded.","학기 후 기숙사 방에 남겨진 물건들은 폐기될 것이다."],["n","휴가","Student interns are not eligible for paid leave.","학생 인턴들은 유급 휴가를 받을 자격이 안 된다."]],"before·while·after·when + 동사-ing"],[581,"hire",17,[["v","고용하다","The management decided to hire additional editors this year.","경영진은 올해 추가 편집자들을 고용하기로 결정했다."],["n","신입 사원","A two-week training program will be offered to new hires.","2주간의 교육 프로그램이 신입 사원들에게 제공될 것이다."]],""],[582,"look",17,[["v","보다","Could you look at the address on the package?","소포에 적힌 주소를 봐줄 수 있나요?"],["n","(겉)모습, 외관 (= appearance, exterior)","We discussed some ways to enhance the look of the hotel lobby.","우리는 호텔 로비의 외관을 돋보이게 할 방법을 논의했다."]],""],[583,"public",17,[["a","공공의, 대중의","I always use public transit to commute to work.","나는 통근하기 위해 항상 대중 교통을 이용한다."],["n","대중, 일반 사람들","The exhibit is open to the public.","그 전시회는 일반인에게 공개된다."]],""],[584,"matter",17,[["n","문제, 사안, 사태","I'd like to discuss the matter further with you.","저는 이 문제를 당신과 더 논의하고 싶습니다."],["v","중요하다, 문제가 되다","That's what matters the most.","그것이 가장 중요한 거죠."]],""],[585,"clear",17,[["a","분명한, 확실한","Ms. Beckette gave me clear instructions on how to answer inquiries.","Beckette 씨는 문의에 답하는 방법에 관해 분명한 설명을 해 주었다."],["v","치우다","A woman is clearing off some tables.","한 여자가 탁자 몇 개를 치우고 있다."],["a","~이 없는","The storage room is clear of boxes.","창고에 상자가 없다."]],""],[586,"address",18,[["","주소","If there is any change to your home or e-mail address, please let us know.","집이나 이메일 주소에 변경이 있을 경우, 저희에게 알려 주십시오."],["","연설","Mr. Ferguson is scheduled to give a keynote address at the trade show.","Ferguson 씨는 무역 박람회에서 기조연설을 할 예정이다."]],""],[587,"appointment",18,[["","약속, 예약","I have an appointment for my annual checkup at noon tomorrow.","나는 내일 정오에 연간 정기 검진이 예약되어 있다."],["","임명","At today's staff meeting, the appointment of the new head designer will be announced.","오늘 직원 회의에서 새 수석 디자이너의 임명이 발표될 것이다."]],""],[588,"allowance",18,[["","허용량, 허용치","Western Ferry has a baggage allowance of 24kg per person.","Western 페리는 수화물 허용 중량을 1인당 24킬로그램으로 하고 있다."],["","수당, 용돈, 비용","All King Supermarket employees are eligible for a monthly transit allowance.","King 슈퍼마켓의 모든 직원은 월 교통 수당을 받을 자격이 있다."]],"baggage allowance 수화물 허용 중량 / daily allowance 일당 / weekly allowance 주급 / make allowance for ~을 감안하다"],[589,"appreciation",18,[["","감사","In appreciation of your subscription, we will send you a 30% coupon.","구독에 대한 감사로 30% 쿠폰을 보내 드리겠습니다."],["","감상, 올바른 이해, 평가","Julie shared her appreciation of the speech Matt Shamalan delivered.","Julie는 Matt Shamalan이 한 연설에 대한 감상을 공유했다."]],""],[590,"area",18,[["","지역, 구역","Comfy Footwear has several store locations in the Miami area.","Comfy 신발 회사는 마이애미 지역에 여러 매장을 갖고 있다."],["","분야, 부문","Our magazine's specific areas of interest are fashion and entertainment.","우리 잡지의 특정 관심 분야는 패션과 엔터테인먼트이다."]],""],[591,"authority",18,[["","권한, 인가, 승인","Ms. Shultz delegated her authority to Marsha Long last month.","Shultz 씨는 지난 달 자신의 권한을 Marsha Long에게 위임했다."],["","당국, 관계 부처","The Transportation Authority held a public hearing to collect feedback.","교통 당국은 의견을 수렴하기 위해 공청회를 열었다."],["","권위자","Mr. Hoffman is an authority on computer engineering.","Hoffman 씨는 컴퓨터 공학 부문의 권위자다."]],""],[592,"capacity",18,[["","수용력, 용량","The movie theater recently increased its seating capacity.","그 영화관은 최근에 좌석 수용력을 늘렸다."],["","능력, 재능","Ms. Preston has an outstanding capacity for securing contracts.","Preston 씨는 계약을 성사시키는 데 뛰어난 능력을 갖고 있다."],["","역할, 지위","In her new capacity as the floor manager, Susan came up with various ideas.","현장 감독이라는 새 역할에서, Susan은 다양한 아이디어를 생각해 냈다."]],"at full capacity 최대로 가동 중인 / be filled to capacity 꽉 차다"],[593,"balance",18,[["","균형","Most workers find maintaining a work-life balance impossible.","대부분의 직장인들은 일과 삶의 균형 유지가 불가능하다고 생각한다."],["","잔액, 잔고","Your current account balance is $200.","당신의 현재 계좌 잔고는 200달러입니다."]],"outstanding balance 미지불 잔액 / balance due 잔금, 미지불액"],[594,"commitment",18,[["","헌신, 전념","Mr. Ibanez's commitment to quality products is highly recognized.","양질의 제품을 위한 Ibanez 씨의 헌신은 크게 인정받고 있다."],["","약속, 책임, 의무","In case Mr. Porter cannot fulfill his commitment as keynote speaker, we need a replacement.","Porter 씨가 기조연설자로서의 약속을 지킬 수 없을 경우를 대비해 대신할 사람을 찾아야 한다."]],"헌신(= dedication, devotion)+to / 약속(= promise, obligation)+to부정사"],[595,"competition",18,[["","(불가산) 경쟁","Despite the increasing competition, Stella Cosmetics remains the top place.","치열해지는 경쟁에도 불구하고, Stella 화장품은 최고의 자리를 지키고 있다."],["","(가산) 대회, 시합","Ben Thompson was the judge for the 13th annual urban photo competition.","Ben Thompson은 제13회 연례 도시 사진 공모전의 심사위원이었다."]],""],[596,"course",18,[["","강좌, 교육 과정","The Casey Community Center offers a variety of language and sports courses.","Casey 지역 주민 센터는 다양한 언어와 스포츠 강좌를 제공한다."],["","방향, 진로","According to the forecast, the typhoon just changed its course.","예보에 따르면 태풍이 막 진로를 변경했다고 한다."],["","경과, 추이","Our sales have steadily decreased over the course of the past 3 years.","우리 매출은 지난 3년에 걸쳐 꾸준히 감소했다."]],""],[597,"coverage",18,[["","보도, 취재, 방송","Only the Nashville TV Station is authorized to provide full coverage of the interview.","내슈빌 TV 방송국만이 그 인터뷰를 집중 보도할 권한을 갖고 있다."],["","적용 범위, 보장 범위","TLC Mobile extended its warranty coverage to 12 months.","TLC 모바일은 품질 보증 보장 범위를 12개월로 늘렸다."],["","서비스 구역","Largo Wireless expanded its coverage area to include most of Florida.","Largo 무선은 서비스 구역을 확대하여 플로리다주 대부분을 포함시켰다."]],"media[press] coverage 언론 보도 / insurance coverage 보험 보상 범위 / medical coverage 의료 혜택"],[598,"difference",18,[["","차이","The one difference between the two buildings is the lack of an on-site parking lot.","두 건물의 한 가지 차이점은 건물 내 주차장이 없다는 점이다."],["","차액","The $20 difference has been refunded to Gary's account.","20달러의 차액은 Gary의 계좌로 환불되었다."],["","큰 변화; 영향","The new vacation policy will make a huge difference for factory workers.","새 휴가 정책은 공장 직원들에게 아주 큰 변화를 가져올 것이다."]],"'큰 변화, 영향'의 뜻일 때는 주로 동사 make와 함께 쓴다."],[599,"decline",18,[["","(자동사) 감소하다, 줄어들다","Mangrove Golf Club membership has declined sharply in recent months.","Mangrove 골프 클럽 회원 수가 최근 몇 달 동안 급격하게 감소했다."],["","(타동사) 거절하다","Henry declined a job offer from the Horizon Hotel because of the long commute.","Henry는 긴 통근 시간 때문에 Horizon 호텔의 일자리 제안을 거절했다."]],""],[600,"effective",18,[["","효과적인","Our new TV commercial was not as effective as we had hoped.","우리의 새 TV 광고는 바란 것만큼 효과적이지는 않았다."],["","시행되는, 발효되는","Ms. Wheeler's promotion becomes effective as of November 20.","Wheeler 씨의 승진은 11월 20일부로 발효된다."]],"effective immediately 즉시 효력을 발생하여"],[601,"entry",18,[["","입구, 문, 현관","There is a vending machine near the entry.","입구 근처에 자판기가 하나 있다."],["","출입, 가입, 입회, 응모","The entry fee to join the Panama Surfing Club is $100 per person.","Panama 서핑 클럽 입회비는 1인당 100달러다."],["","출품작, 참가작, 응모권","The winning entry of the design contest is Rose Castle by Dan Cooper.","그 디자인 대회의 우승 출품작은 Dan Cooper의 Rose Castle이다."]],""],[602,"enclosed",18,[["","동봉된","To return your purchase, please use the enclosed shipping label.","구매 물품을 반품하시려면, 동봉된 선적 라벨을 사용해 주십시오."],["","둘러쳐진, 밀폐된","The building includes an enclosed picnic area on the rooftop.","그 건물은 옥상에 벽으로 둘러쳐진 피크닉 장소가 있다."]],"Enclosed is[are] ~ / find ~ enclosed[attached] / enclosed parking garage 지하 주차장"],[603,"figure",18,[["","수치, 숫자","Ms. Gu reported that the sales figures were much higher than expected.","Gu 씨는 판매 수치가 예상보다 훨씬 높았다고 보고했다."],["","인물","Megan Tierry wrote an article about several notable figures from the company.","Megan Tierry는 그 회사의 몇몇 유명한 인물들에 대한 기사를 썼다."]],"수치 = number (sales figures) / 인물 = person (famous sports figure)"],[604,"good",18,[["","좋은, 착한","I'd like to thank Mr. Shin for the good service I received.","제가 받은 좋은 서비스에 대해 Shin 씨에게 감사드리고 싶습니다."],["","유효한","This voucher is good until October 11.","이 상품권은 10월 11일까지 유효합니다."]],"좋은 = excellent (in good condition) / 유효한 = valid (hold good for+기간)"],[605,"meet",18,[["","만나다","Managers will briefly meet after the sales meeting.","매니저들은 영업 회의가 끝난 후 잠시 만날 것이다."],["","(요구·조건을) 충족시키다","Toby is the only one who meets all of the qualifications for the position.","Toby가 그 직책의 모든 자격 요건을 충족시키는 유일한 사람이다."]],""],[606,"overlook",18,[["","간과하다, 눈감아 주다","I apologize for overlooking Ms. Roberts' suggestions.","Roberts 씨의 제안을 간과한 것에 대해 사과 드립니다."],["","내려다보다","The guest booked a room that overlooks Laguna Beach.","그 손님은 Laguna 해변이 내려다보이는 방을 예약했다."]],""],[607,"installment",18,[["","(연재물의) 1회분, 한 권","Unicorn Publishing asked Eugene Liu to write a new installment every three months.","Unicorn 출판사는 Eugene Liu에게 세 달마다 새 1회분을 쓰도록 요청했다."],["","할부, 분할","Mr. Gibbs bought the classic guitar on an installment plan.","Gibbs 씨는 클래식 기타를 할부로 구입했다."]],"on an installment plan = in installments 할부로 / cf. installation 설치, 설비"],[608,"initiative",18,[["","계획, 기획, 운동","Landeen Telecommunications recently announced a new initiative to help employees think creatively.","Landeen 통신사는 직원들이 창의적으로 생각하도록 돕는 새 계획을 발표했다."],["","주도권, 솔선수범","Mr. Salum took the initiative in solving customers' complaints.","Salum 씨는 고객 불만을 해결하는 데 주도적 역할을 했다."],["","결단력, 진취력, 창의력","Displaying initiative is very important when having a job interview.","구직 면접에서 진취력을 보여 주는 것은 매우 중요하다."]],"계획 → plan, program / 결단력 → decisiveness / 진취력 → progressiveness / 창의력 → creativity"],[609,"persistent",18,[["","끈질긴, 고집 센, 집요한","With her persistent efforts, Rebecca secured a contract with SMT Energy.","그녀의 끈질긴 노력으로, Rebecca는 SMT 에너지와 계약을 체결했다."],["","(화학 약품이) 잘 지워지지 않는","Baking soda is all you need to remove persistent food stains.","잘 지워지지 않는 음식 얼룩을 지우는 데는 베이킹 소다만 있으면 된다."]],""],[610,"pick up",18,[["","찾아오다, 사다","Can you pick up my leather jacket on your way home?","집에 오는 길에 내 가죽 재킷 좀 찾아올 수 있어?"],["","익히다, 터득하다","Mina picked up some Spanish while she worked in Madrid.","Mina는 마드리드에서 일하는 동안 스페인어를 좀 익혔다."],["","회복되다, 개선되다","Paul's custom furniture business has started picking up.","Paul의 맞춤 가구 사업이 회복되기 시작했다."]],""],[611,"resolution",18,[["","해결, 해답","There is no adequate resolution to the budget issue.","예산 문제에 대해 적절한 해결책이 없다."],["","결의, 결심","Improving my French is one of my new year's resolutions.","프랑스어 실력 향상이 나의 새해 결심 가운데 하나이다."],["","해상도","The digital photo you submit should be a high-resolution one.","제출하는 디지털 사진은 고해상도여야 합니다."]],""],[612,"rest",18,[["","나머지","Regina Kim will train employees for the rest of the month.","Regina Kim은 그 달의 나머지 기간 동안 직원들을 교육할 것이다."],["","휴식","Mr. Pleva, you need to get some rest after such excessive exercise.","Pleva 씨, 그렇게 과도한 운동 후에는 휴식을 좀 취해야 해요."]],"get some rest -> break / rest of+명사 -> remainder"],[613,"replacement",18,[["","교체, 대체","A replacement laptop will be shipped within 24 hours.","노트북 교체품은 24시간 이내에 선적될 것이다."],["","대체자, 후임","The replacement for Mr. Wang is scheduled to start his work on July 8.","Wang 씨의 후임은 7월 8일에 일을 시작할 예정이다."]],"replacement 후임 / predecessor 전임자 / substitute 대리자 / successor 후임자"],[614,"reservation",18,[["","예약","One of our agents will call you to confirm your reservation.","저희 중개인 중 하나가 예약을 확인하기 위해 전화를 할 것입니다."],["","의구심, 거리낌","Ms. Koven initially had reservations about hiring Tim as the head chef.","Koven 씨는 처음에는 Tim을 수석 주방장으로 고용하는 것에 의구심을 갖고 있었다."]],""],[615,"term",18,[["","(계약의) 조건, 조항","Please thoroughly read all the terms and conditions in the rental agreement.","임대 계약서에 명시된 모든 계약 조건을 꼼꼼히 읽으시기 바랍니다."],["","기간, 임기","Raymond Cha, the new CEO of AMG Insurance, started his term three months ago.","AMG 보험사의 새 CEO인 Raymond Cha는 세 달 전에 임기를 시작했다."],["","용어","This user guide contains too many technical terms.","이 사용자 안내서는 너무 많은 기술 용어를 포함하고 있다."]],""]];
+let DATA = [];
+ENTRIES.forEach(([id,en,ko,s,rels])=>{
+  const note=(rels||[]).map(([t,re,rk])=>relTag[t]+" "+re+(rk&&rk!==ko?(" — "+rk):"")).join("\n");
+  DATA.push({id,en,ko,s,kind:"head",x:false,note});
+  (rels||[]).forEach(([t,re,rk])=>DATA.push({id:null,en:re,ko:rk,s,kind:t,x:true,note:""}));
+});
+EXTRA.forEach(([s,en,ko])=>DATA.push({id:null,en,ko,s,kind:"extra",x:true,note:""}));
+POLY.forEach(([id,en,s,senses,note])=>{const ko=senses.map(z=>z[1]).join(" · ");DATA.push({id,en,ko,s,kind:"head",x:false,note:note||"",senses});});
+
+const pad = n => String(n).padStart(4,"0");
+const $ = id => document.getElementById(id);
+const shuffleArr = a => { for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; };
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+/* ---------- blank-fill engine ---------- */
+const PREP = new Set(["for","in","on","to","with","at","into","from","of","by","about","over","off","through","up","out","down","against","upon","as","behind","around","after","before"]);
+const NOBLANK = new Set(["a","an","the","one's","your","my","its","their","this","that","some","A","B"]);
+const isWord = w => /^[A-Za-z][A-Za-z'-]*$/.test(w);
+function wclass(w){ w=w.toLowerCase();
+  if(PREP.has(w)) return "prep";
+  if(w.endsWith("ly")) return "adv";
+  if(w.endsWith("ed")) return "ed";
+  if(w.endsWith("ing")) return "ing";
+  return "other";
+}
+const POOL={prep:[],adv:[],ed:[],ing:[],other:[]};
+(function buildPool(){
+  const seen=new Set();
+  DATA.forEach(d=> d.en.split(/\s+/).forEach(tk=>{
+    const w=tk.toLowerCase();
+    if(isWord(tk) && !NOBLANK.has(tk) && !seen.has(w)){ seen.add(w); POOL[wclass(tk)].push(tk.toLowerCase()); }
+  }));
+})();
+function blankIndex(tokens){
+  const cand=[];
+  tokens.forEach((tk,i)=>{ if(isWord(tk) && !NOBLANK.has(tk)) cand.push(i); });
+  if(!cand.length) return -1;
+  return cand[Math.random()*cand.length|0];
+}
+function distractors(answer, phraseLowers){
+  const cls=wclass(answer), al=answer.toLowerCase();
+  let pool=POOL[cls].filter(w=>w!==al && !phraseLowers.includes(w));
+  pool=Array.from(new Set(pool)); shuffleArr(pool);
+  let res=pool.slice(0,3);
+  if(res.length<3){
+    let rest=[].concat(POOL.prep,POOL.adv,POOL.ed,POOL.ing,POOL.other)
+      .filter(w=>w!==al && !res.includes(w) && !phraseLowers.includes(w));
+    rest=Array.from(new Set(rest)); shuffleArr(rest);
+    res=res.concat(rest.slice(0,3-res.length));
+  }
+  return res;
+}
+function buildBlank(d){
+  const tokens=d.en.split(/\s+/);
+  let bi=blankIndex(tokens);
+  if(bi<0){ bi=0; }
+  const answer=tokens[bi];
+  const lowers=tokens.map(t=>t.toLowerCase());
+  const opts=shuffleArr([answer.toLowerCase(), ...distractors(answer, lowers)]);
+  const html=tokens.map((t,i)=> i===bi ? '<span class="blk" id="theBlk">____</span>' : esc(t)).join(" ");
+  return {html, answer:answer.toLowerCase(), options:opts, bi};
+}
+
+/* ---------- bookmarks ---------- */
+const STORE_KEY="paw_voca_bookmarks";
+let bookmarks=new Set();
+const bmKey = d => d.id ? "h"+d.id : (d.kind+":"+d.en);
+const isBm = d => bookmarks.has(bmKey(d));
+function toggleBm(d){ const k=bmKey(d); bookmarks.has(k)?bookmarks.delete(k):bookmarks.add(k); saveBm(); }
+const bookmarkCount = () => DATA.filter(isBm).length;
+async function loadBm(){ try{ const r=await window.storage.get(STORE_KEY); if(r&&r.value) JSON.parse(r.value).forEach(k=>bookmarks.add(k)); }catch(e){} buildChaps(); updateStartCount(); }
+async function saveBm(){ try{ await window.storage.set(STORE_KEY, JSON.stringify([...bookmarks])); }catch(e){} }
+
+/* ---------- pronunciation ---------- */
+function speak(text,btn){
+  try{ if(!window.speechSynthesis) return;
+    let t=text.replace(/\s*\+.*$/,"").replace(/\[[^\]]*\]/g,"").replace(/[()]/g,"").replace(/~/g,"").replace(/\bA\b|\bB\b/g,"").replace(/\s+/g," ").trim();
+    window.speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(t); u.lang="en-US"; u.rate=0.92;
+    if(btn){ btn.classList.add("speaking"); u.onend=()=>btn.classList.remove("speaking"); u.onerror=()=>btn.classList.remove("speaking"); }
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+let state={ mode:"flash", step:"all", extras:true, shuffle:true, deck:[], i:0, know:0, again:0, wrong:[], reviewPool:[], cur:null };
+let showKo=false;
+let cardChecks=new Set();
+
+function poolFor(){
+  let p;
+  if(state.step==="bookmark") p=DATA.filter(isBm);
+  else if(state.step==="random"){ p=DATA.slice(); if(!state.extras)p=p.filter(d=>!d.x); }
+  else { p=DATA.filter(d=> state.step==="all" || d.s===state.step); if(!state.extras) p=p.filter(d=>!d.x); }
+  if(state.mode==="blank") p=p.filter(d=>/\s/.test(d.en));
+  return p;
+}
+function updateStartCount(){
+  let n=poolFor().length;
+  if(state.step==="random") n=Math.min(RANDOM_N,n);
+  $("startCount").textContent=n; $("startBtn").disabled=n===0;
+}
+
+const GROUPS=[
+  {key:"collo",name:"콜로케이션",meta:"STEP 1–14 · 0001–0480",steps:[1,2,3,4,5,6,7,8,9,10,11,12,13,14]},
+  {key:"multi",name:"다품사 어휘",meta:"STEP 15–17 · 0481–0585",steps:[15,16,17]},
+  {key:"poly",name:"다의어",meta:"STEP 18 · 0586–0615",steps:[18]},
+];
+let openGroups=new Set();
+function buildChaps(){
+  const box=$("chaps"); box.innerHTML="";
+  box.appendChild(randChapBtn());
+  box.appendChild(bmChapBtn());
+  const allH=DATA.filter(d=>!d.x).length, allX=DATA.filter(d=>d.x).length;
+  box.appendChild(chapBtn("all","ALL","전체","STEP 1–18 · 0001–0615",allH,allX));
+  GROUPS.forEach(g=>{
+    const open=openGroups.has(g.key);
+    const totH=DATA.filter(d=>g.steps.includes(d.s)&&!d.x).length;
+    const head=document.createElement("button");
+    head.className="grp"+(open?" open":"");
+    head.setAttribute("aria-expanded",String(open));
+    head.innerHTML='<span class="g-ar">▸</span>'
+      +'<span class="g-tx"><span class="g-nm">'+g.name+'</span>'
+      +'<span class="g-meta">'+g.meta+'</span></span>'
+      +'<span class="g-cnt"><b>'+totH+'</b>표제어</span>';
+    head.addEventListener("click",()=>{ openGroups.has(g.key)?openGroups.delete(g.key):openGroups.add(g.key); buildChaps(); });
+    box.appendChild(head);
+    if(open){
+      const sub=document.createElement("div"); sub.className="grp-body";
+      g.steps.forEach(s=>{ const c=CH.find(x=>x.s===s); if(!c) return;
+        const h=DATA.filter(d=>d.s===c.s&&!d.x).length, x=DATA.filter(d=>d.s===c.s&&d.x).length;
+        sub.appendChild(chapBtn(c.s,"STEP "+c.s,c.name,c.code+" · "+c.range,h,x));
+      });
+      box.appendChild(sub);
+    }
+  });
+}
+function selectChap(step,btn){
+  state.step=step;
+  document.querySelectorAll(".chap").forEach(z=>z.setAttribute("aria-pressed","false"));
+  btn.setAttribute("aria-pressed","true"); updateStartCount();
+}
+function randChapBtn(){
+  const total=DATA.length;
+  const b=document.createElement("button");
+  b.className="chap rnd"; b.setAttribute("aria-pressed",String(state.step==="random"));
+  b.innerHTML='<span class="badge ico">🎲</span><span><span class="nm">랜덤 테스트</span><span class="meta">전체에서 '+RANDOM_N+'문제 무작위</span></span>'
+    +'<span class="cnt"><b>'+RANDOM_N+'</b><span>문제</span></span>';
+  b.addEventListener("click",()=>selectChap("random",b));
+  return b;
+}
+function bmChapBtn(){
+  const n=bookmarkCount();
+  const b=document.createElement("button");
+  b.className="chap bm"; b.id="bmChap"; b.disabled=n===0;
+  b.setAttribute("aria-pressed",String(state.step==="bookmark"));
+  b.innerHTML='<span class="badge">★</span><span><span class="nm">북마크</span><span class="meta">'
+    +(n?"내가 저장한 단어 모음":"카드에서 ★를 눌러 저장")+'</span></span>'
+    +'<span class="cnt"><b>'+n+'</b><span>단어</span></span>';
+  b.addEventListener("click",()=>{ if(b.disabled) return; selectChap("bookmark",b); });
+  return b;
+}
+function chapBtn(step,badge,nm,meta,h,x){
+  const b=document.createElement("button");
+  b.className="chap"; b.setAttribute("aria-pressed",String(state.step===step));
+  b.innerHTML='<span class="badge">'+badge+'</span>'
+    +'<span><span class="nm">'+nm+'</span><span class="meta">'+meta+'</span></span>'
+    +'<span class="cnt"><b>'+h+'</b><span>표제어 +'+x+'</span></span>';
+  b.addEventListener("click",()=>selectChap(step==="all"?"all":+step,b));
+  return b;
+}
+function refreshBmCount(){
+  const n=bookmarkCount(), b=$("bmChap");
+  if(b){ b.disabled=n===0; b.querySelector(".cnt b").textContent=n;
+    b.querySelector(".meta").textContent=n?"내가 저장한 단어 모음":"카드에서 ★를 눌러 저장"; }
+  updateStartCount();
+}
+
+$("extras").addEventListener("change",e=>{ state.extras=e.target.checked; buildChaps(); updateStartCount(); });
+$("shuffle").addEventListener("change",e=>state.shuffle=e.target.checked);
+$("modeFlash").addEventListener("click",()=>setMode("flash"));
+$("modeMC").addEventListener("click",()=>setMode("mc"));
+$("modeBlank").addEventListener("click",()=>setMode("blank"));
+function setMode(m){ state.mode=m;
+  $("modeFlash").setAttribute("aria-pressed",m==="flash");
+  $("modeMC").setAttribute("aria-pressed",m==="mc");
+  $("modeBlank").setAttribute("aria-pressed",m==="blank");
+  updateStartCount();
+}
+function showView(v){
+  $("flashView").classList.toggle("hide",v!=="flash");
+  $("mcView").classList.toggle("hide",v!=="mc");
+  $("blankView").classList.toggle("hide",v!=="blank");
+}
+function renderCurrent(){ state.mode==="flash"?renderFlash():state.mode==="mc"?renderMC():renderBlank(); }
+
+$("startBtn").addEventListener("click",start);
+function start(){
+  let pool=poolFor().slice();
+  if(!pool.length) return;
+  if(state.step==="random"){ shuffleArr(pool); pool=pool.slice(0,RANDOM_N); }
+  else if(state.shuffle) shuffleArr(pool);
+  state.deck=pool; state.i=0; state.know=0; state.again=0; state.wrong=[];
+  $("setup").classList.add("hide"); $("result").classList.add("hide"); $("quiz").classList.remove("hide");
+  $("qTot").textContent=" / "+pool.length;
+  renderCurrent();
+}
+function updateScore(){
+  $("pillKnow").textContent="알아요 "+state.know;
+  $("pillAgain").textContent="다시 "+state.again;
+  $("qCur").textContent=state.i+1;
+  $("barFill").style.width=((state.i/state.deck.length)*100)+"%";
+}
+function idxLabel(d){ if(d.id) return pad(d.id); if(d.kind==="extra") return "추가 표현"; if(d.kind==="cf") return "cf. 참고"; if(d.kind==="syn") return "= 동의어"; if(d.kind==="ant") return "↔ 반의어"; return "관련"; }
+const idxShort = d => d.id ? pad(d.id) : (d.kind==="extra"?"추가":relTag[d.kind]||"관련");
+
+/* ---------- flashcard ---------- */
+function renderFlash(){ showView("flash"); showKo=false; cardChecks=new Set(); paintCard(); updateScore(); speak(state.deck[state.i].en, $("cAudio")); }
+const POSK={n:"명사",v:"동사",a:"형용사",ad:"부사",prep:"전치사",conj:"접속사"};
+function sensesHTML(d){
+  let h='<div class="slist">';
+  d.senses.forEach((s,i)=>{
+    const pos=s[0],ko=s[1],ex=s[2],exk=s[3];
+    const badge=pos?('<span class="s-pos">'+POSK[pos]+'</span>'):('<span class="s-pos num">'+(i+1)+'</span>');
+    h+='<label class="sense"><input type="checkbox" class="s-chk" data-i="'+i+'"'+(cardChecks.has(i)?' checked':'')+'>'
+      +'<span class="s-main">'+badge+'<span class="s-ko">'+esc(ko)+'</span>'
+      +(ex?'<span class="s-ex">'+esc(ex)+'</span>':'')
+      +(exk?'<span class="s-exk">'+esc(exk)+'</span>':'')
+      +'</span></label>';
+  });
+  h+='</div>';
+  if(d.note) h+='<div class="s-note">'+esc(d.note)+'</div>';
+  return h;
+}
+function bindSenses(container){
+  container.addEventListener("click",e=>e.stopPropagation());
+  container.querySelectorAll(".s-chk").forEach(chk=>{
+    chk.addEventListener("change",e=>{ e.stopPropagation();
+      const i=+chk.dataset.i; chk.checked?cardChecks.add(i):cardChecks.delete(i); });
+  });
+}
+function paintCard(){
+  const d=state.deck[state.i];
+  $("cIdx").textContent=idxLabel(d);
+  const tag=$("cTag"), term=$("cTerm"), note=$("cNote");
+  const poly=d.senses&&d.senses.length;
+  if(d.x){ tag.className="tag add"; tag.textContent=kindLabel[d.kind]||"추가 표현"; }
+  else if(showKo){ tag.className="tag ko"; tag.textContent=poly?"뜻 모두":"뜻"; }
+  else if(poly){ tag.className="tag poly"; tag.textContent="다의어 "+d.senses.length+"뜻"; }
+  else { tag.className="tag"; tag.textContent="ENGLISH"; }
+
+  if(showKo && poly){
+    term.textContent=d.en; term.className="term en-mode poly-head";
+    note.className="note senses"; note.innerHTML=sensesHTML(d); bindSenses(note);
+    $("cHint").textContent="아는 뜻을 체크 · 탭하면 영어로";
+  }else if(showKo){
+    term.textContent=d.ko; term.className="term ko-mode";
+    note.className="note"; note.textContent=d.note||""; $("cHint").textContent="탭하면 영어 보기";
+  }else{
+    term.textContent=d.en; term.className="term en-mode";
+    note.className="note"; note.textContent="";
+    $("cHint").textContent=poly?("뜻 "+d.senses.length+"개 떠올려 보고 탭"):"탭하면 뜻 보기";
+  }
+  $("cBm").textContent=isBm(d)?"★":"☆"; $("cBm").setAttribute("aria-pressed",String(isBm(d)));
+}
+function toggleCard(){ showKo=!showKo; paintCard(); }
+$("card").addEventListener("click",toggleCard);
+$("card").addEventListener("keydown",e=>{ if(e.key===" "||e.key==="Enter"){e.preventDefault();toggleCard();} });
+$("cAudio").addEventListener("click",e=>{ e.stopPropagation(); speak(state.deck[state.i].en,e.currentTarget); });
+$("cBm").addEventListener("click",e=>{ e.stopPropagation(); toggleBm(state.deck[state.i]); paintCard(); refreshBmCount(); });
+$("gKnow").addEventListener("click",()=>grade(true));
+$("gAgain").addEventListener("click",()=>grade(false));
+function grade(known){ const d=state.deck[state.i]; if(known) state.know++; else { state.again++; state.wrong.push(d);} advance(); }
+
+/* ---------- meaning MC ---------- */
+function renderMC(){
+  showView("mc");
+  const d=state.deck[state.i];
+  $("mIdx").textContent=idxLabel(d);
+  $("mEn").textContent=d.en; $("mcNext").classList.add("hide");
+  $("mBm").textContent=isBm(d)?"★":"☆"; $("mBm").setAttribute("aria-pressed",String(isBm(d)));
+  const others=shuffleArr(DATA.filter(x=>x.ko!==d.ko)).slice(0,3);
+  const opts=shuffleArr([d,...others]); const keys=["A","B","C","D"];
+  const wrap=$("choices"); wrap.innerHTML="";
+  opts.forEach((o,idx)=>{ const b=document.createElement("button"); b.className="choice";
+    b.innerHTML='<span class="k">'+keys[idx]+'</span><span>'+o.ko+'</span>';
+    b.addEventListener("click",()=>pickMC(b,o,d)); wrap.appendChild(b); });
+  updateScore();
+}
+$("mAudio").addEventListener("click",e=>{ e.stopPropagation(); speak(state.deck[state.i].en,e.currentTarget); });
+$("mBm").addEventListener("click",e=>{ e.stopPropagation(); const d=state.deck[state.i]; toggleBm(d); $("mBm").textContent=isBm(d)?"★":"☆"; $("mBm").setAttribute("aria-pressed",String(isBm(d))); refreshBmCount(); });
+function pickMC(btn,chosen,correct){
+  const all=[...document.querySelectorAll("#choices .choice")]; all.forEach(b=>b.disabled=true);
+  if(chosen.ko===correct.ko){ btn.classList.add("correct"); state.know++; }
+  else{ btn.classList.add("wrong"); state.again++; state.wrong.push(correct);
+    all.forEach(b=>{ if(b.querySelector("span:last-child").textContent===correct.ko) b.classList.add("correct"); }); }
+  $("mcNext").classList.remove("hide"); updateScore();
+}
+$("mcNextBtn").addEventListener("click",advance);
+
+/* ---------- blank fill ---------- */
+function renderBlank(){
+  showView("blank");
+  const d=state.deck[state.i];
+  const q=buildBlank(d); state.cur=q;
+  $("bIdx").textContent=idxLabel(d);
+  $("bPhrase").innerHTML=q.html;
+  $("bKo").textContent=d.ko;
+  $("blankNext").classList.add("hide");
+  $("bBm").textContent=isBm(d)?"★":"☆"; $("bBm").setAttribute("aria-pressed",String(isBm(d)));
+  const wrap=$("bChoices"); wrap.innerHTML=""; const keys=["A","B","C","D"];
+  q.options.forEach((o,idx)=>{ const b=document.createElement("button"); b.className="choice";
+    b.innerHTML='<span class="k">'+keys[idx]+'</span><span>'+esc(o)+'</span>';
+    b.addEventListener("click",()=>pickBlank(b,o)); wrap.appendChild(b); });
+  updateScore();
+}
+$("bAudio").addEventListener("click",e=>{ e.stopPropagation(); speak(state.deck[state.i].en,e.currentTarget); });
+$("bBm").addEventListener("click",e=>{ e.stopPropagation(); const d=state.deck[state.i]; toggleBm(d); $("bBm").textContent=isBm(d)?"★":"☆"; $("bBm").setAttribute("aria-pressed",String(isBm(d))); refreshBmCount(); });
+function pickBlank(btn,chosen){
+  const d=state.deck[state.i], ans=state.cur.answer;
+  const all=[...document.querySelectorAll("#bChoices .choice")]; all.forEach(b=>b.disabled=true);
+  const blk=$("theBlk"); if(blk){ blk.textContent=ans; blk.classList.add("reveal"); }
+  if(chosen===ans){ btn.classList.add("correct"); state.know++; }
+  else{ btn.classList.add("wrong"); state.again++; state.wrong.push(d);
+    all.forEach(b=>{ if(b.querySelector("span:last-child").textContent===ans) b.classList.add("correct"); }); }
+  $("blankNext").classList.remove("hide"); updateScore();
+}
+$("blankNextBtn").addEventListener("click",advance);
+
+/* ---------- flow ---------- */
+function advance(){ if(window.speechSynthesis) window.speechSynthesis.cancel(); state.i++; if(state.i>=state.deck.length){ finish(); return; } renderCurrent(); }
+$("quitBtn").addEventListener("click",()=>{ if(state.i>0) finish(); else backToSetup(); });
+
+function finish(){
+  $("quiz").classList.add("hide"); $("result").classList.remove("hide");
+  const total=state.know+state.again;
+  $("rScore").innerHTML=state.know+'<small>/'+total+'</small>';
+  $("rKnow").textContent=state.know; $("rAgain").textContent=state.again;
+  const pct=total?Math.round(state.know/total*100):0;
+  let head,msg;
+  if(pct===100){head="완벽해요! 🎯";msg="이 묶음은 끝. 다음 STEP으로 넘어가도 좋아요.";}
+  else if(pct>=80){head="거의 다 왔어요";msg="틀린 것만 한 번 더 돌리면 완성이에요.";}
+  else if(pct>=50){head="잘하고 있어요";msg="다시 볼 단어를 외우고 재도전!";}
+  else{head="이제 시작이에요";msg="틀린 것만 모아 반복하면 금방 올라가요.";}
+  $("rHead").textContent=head; $("rMsg").textContent=msg;
+  const seen=new Set(); state.reviewPool=[];
+  state.wrong.forEach(d=>{ const k=d.id||(d.kind+d.en); if(!seen.has(k)){seen.add(k);state.reviewPool.push(d);} });
+  const wl=$("wrongList");
+  if(state.reviewPool.length){
+    wl.classList.remove("hide"); $("wrongCt").textContent=state.reviewPool.length;
+    const box=$("wrongItems"); box.innerHTML="";
+    state.reviewPool.forEach(d=>{ const row=document.createElement("div"); row.className="wi";
+      row.innerHTML='<span class="e">'+idxShort(d)+' · '+esc(d.en)+'</span><span class="k">'+d.ko+'</span>'; box.appendChild(row); });
+    $("redoWrong").classList.remove("hide");
+  }else{ wl.classList.add("hide"); $("redoWrong").classList.add("hide"); }
+}
+$("redoWrong").addEventListener("click",()=>{
+  let pool=state.reviewPool.slice(); if(state.shuffle) shuffleArr(pool);
+  state.deck=pool; state.i=0; state.know=0; state.again=0; state.wrong=[];
+  $("result").classList.add("hide"); $("quiz").classList.remove("hide");
+  $("qTot").textContent=" / "+pool.length; renderCurrent();
+});
+$("again").addEventListener("click",backToSetup);
+function backToSetup(){
+  if(window.speechSynthesis) window.speechSynthesis.cancel();
+  $("quiz").classList.add("hide"); $("result").classList.add("hide"); $("setup").classList.remove("hide");
+  buildChaps(); updateStartCount();
+}
+
+$("totalChip").innerHTML='단어 <b>'+DATA.length+'</b>';
+buildChaps(); updateStartCount(); loadBm();
+</script>
+</body>
+</html>
